@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Formulario de Registro -->
+    <section class="formulario">
+
+        <div class="form registro">
+            <div class="form-content">
+                <header>Crea una cuenta nueva</header>
+                <!-- Campos formulario -->
+                <form action="#">
+                    <div class="fields">
+                        <div class="field input-field">
+                            <label>Primer Nombre</label>
+                            <input type="text" placeholder="Ingresa tu nombre" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Primer Apellido</label>
+                            <input type="text" placeholder="Ingresa tu apellido" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Tipo de documento</label>
+                            <select required>
+                                <option disabled selected>Seleccionar</option>
+                                <option>TI</option>
+                                <option>CC</option>
+                                <option>CE</option>
+                                <option>NIT</option>
+                                <option>PAS</option>
+                            </select>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Número de documento</label>
+                            <input type="number" placeholder="Ingresa tu numero de documento" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Correo</label>
+                            <input type="email" placeholder="Ingresa tu correo" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Número de teléfono</label>
+                            <input type="number" placeholder="Ingresa tu número de teléfono" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="Crea una contraseña" required>
+                            <!-- <i class='bx bx-hide eye-icon'></i> -->
+                        </div>
+
+                        <div class="field input-field">
+                            <label>Confirmación</label>
+                            <input type="password" placeholder="Confirma tu contraseña" required>
+                        </div>
+
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Registrarse</button>
+                    </div>
+                </form>
+                <!-- link pág. inicio de sesión -->
+                <div class="form-link">
+                    <span>¿Ya tienes una cuenta? <a href="acceso.html" rel="import">acceder</a></span>
+                </div>
+
+                <div class="line"></div>
+                <!-- Opciones externas para registrarse  -->
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Registrate con Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="images\google.png" alt="" class="google-img">
+                        <span>Registrate con Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

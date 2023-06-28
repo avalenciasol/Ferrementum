@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceder</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Formulario de Inicio de Sesión -->
+    <section class="formulario">
+
+        <div class="form acceso">
+            <div class="form-content">
+                <header>Inicia Sesión</header>
+                <!-- Campos formulario -->
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Correo" class="input">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Contraseña" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">¿Olvidaste la contraseña?</a>
+                    </div>
+
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Recuérdame
+                    </label>
+
+                    <div class="field button-field">
+                        <button>Acceder</button>
+                    </div>
+                </form>
+                <!-- link pág. registro -->
+                <div class="form-link">
+                    <span>¿No tienes una cuenta? <a href="registro.html" rel="import">Registrate</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <!-- Opciones externas para acceder -->
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Continuar con Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="images\google.png" alt="" class="google-img">
+                    <span>Continuar con Google</span>
+                </a>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- Javascript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
