@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Compra</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #E0E0E0;
+    }
+
+    .container {
+      background-color: #F5F5F5;
+      color: #030303;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .form-control {
+      background-color:#E0E0E0;
+      color: #6e6e6e;
+      border: 2px solid #c8c7c7;
+    }
+    .btn-primary {
+      color: #FFFDFD;
+    background-color: #FF7C0A;
+    border: transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">Confirmación de la compra</h2>
+    <form id="formularioCompra">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="documento">Documento de Identidad:</label>
+        <input type="text" class="form-control" id="documento" name="documento" required>
+      </div>
+      <div class="form-group">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" required>
+      </div>
+      <div class="form-group">
+        <label for="tarjeta">Ciudad:</label>
+        <select class="form-control" id="ciudad" name="ciudad" required>
+          <option value="" disabled selected>Seleccionar una ciudad</option>
+          <option value="Bogota">Bogota</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="localidad">Localidad:</label>
+        <select class="form-control" id="localidad" name="localidad" required>
+          <option value="" disabled selected>Seleccionar Localidad</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="barrio">Barrio:</label>
+        <select class="form-control" id="barrio" name="barrio" required>
+          <option value="" disabled selected>Seleccionar Barrio</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tarjeta">Tipo de Tarjeta:</label>
+        <select class="form-control" id="tarjeta" name="tarjeta" required>
+          <option value="" disabled selected>Seleccionar Tipo de Tarjeta</option>
+          <option value="Visa">Visa</option>
+          <option value="Mastercard">Mastercard</option>
+          <!-- Agrega aquí los demás tipos de tarjeta -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="titularTarjeta">Titular de la Tarjeta:</label>
+        <input type="text" class="form-control" id="titularTarjeta" name="titularTarjeta" required>
+      </div>
+      <div class="form-group">
+        <label for="numeroTarjeta">Número de Tarjeta:</label>
+        <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" required>
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC:</label>
+        <input type="text" class="form-control" id="cvc" name="cvc" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Realizar Compra</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const localidadesPorCiudad = {
+        "Bogota": [
+          "Usaquén",
+          "Chapinero",
+          "Santa Fe",
+          "San Cristóbal",
+          "Usme",
+          "Tunjuelito",
+          "Bosa",
+          "Kennedy",
+          "Fontibón",
+          "Engativá",
+          "Suba",
+          "Barrios Unidos",
+          "Teusaquillo",
+          "Los Mártires",
+          "Antonio Nariño",
+          "Puente Aranda",
+          "La Candelaria",
+          "Rafael Uribe Uribe",
+          "Ciudad Bolívar",
+          "Sumapaz"
+        ],
+        // Agrega aquí las localidades de las demás ciudades
+      };
+
+      const barriosPorLocalidad = {
+        "Usaquén": [
+          "Santa Bárbara",
+          "Rosales",
+          "La Carolina"
+        ],
+        "Chapinero": [
+          "Santa Ana",
+          "Chapinero Central",
+          "El Retiro"
+        ],
+        "Santa Fe": [
+          "La Candelaria",
+          "Las Nieves",
+          "La Macarena"
+        ],
+        "San Cristóbal": [
+          "San Cristóbal Norte",
+          "San Cristóbal Sur",
+          "San Blas"
+        ],
+        "Usme": [
+          "Las Mercedes",
+          "Usme Centro",
+          "Danubio"
+        ],
+        "Tunjuelito": [
+          "El Tesoro",
+          "Gran Yomasa",
+          "Tunjuelito Centro"
+        ],
+        "Bosa": [
+          "Venecia",
+          "El Carmen",
+          "San Rafael"
+        ],
+        "Kennedy": [
+          "Bosa Centro",
+          "Bosa Nova",
+          "San Bernardino"
+        ],
+        "Fontibón": [
+          "El Porvenir",
+          "Kennedy Central",
+          "Castilla"
+        ],
+        "Engativá": [
+          "Carvajal",
+          "Timiza",
+          "Fontibón Central"
+        ],
+        "Suba": [
+          "Modelia",
+          "Zona Franca",
+          "Calle 26"
+        ],
+        "Barrios Unidos": [
+          "Engativá Central",
+          "El Cedro",
+          "Los Álamos"
+        ],
+        "Teusaquillo": [
+          "La Soledad",
+          "Galán",
+          "Metrópolis"
+        ],
+        "Los Mártires": [
+          "San Bernardo",
+          "Santa Isabel",
+          "La Estanzuela"
+        ],
+        "Antonio Nariño": [
+          "El Rincón",
+          "Bolivia",
+          "Restrepo"
+        ],
+        "Puente Aranda": [
+          "Córdoba",
+          "Las Ferias",
+          "San Miguel"
+        ],
+        "La Candelaria": [
+          "Las Cruces",
+          "La Concordia",
+          "Belén"
+        ],
+        "Rafael Uribe Uribe": [
+          "Quiroga",
+          "Veinte de Julio",
+          "La Victoria"
+        ],
+        "Ciudad Bolívar": [
+          "Mochuelo Bajo",
+          "El Paraíso",
+          "Lijacá"
+        ],
+        "Sumapaz": [
+          "San Juan",
+          "Serranías",
+          "Chapinero Rural"
+        ],
+        // Agrega aquí los barrios de las demás localidades
+      };
+
+      // Función para cargar las localidades de la ciudad seleccionada
+      $("#ciudad").change(function () {
+        const ciudad = $(this).val();
+        const localidades = localidadesPorCiudad[ciudad];
+
+        // Limpiar el select de localidades
+        $("#localidad").empty().append('<option value="" disabled selected>Seleccionar Localidad</option>');
+
+        // Agregar las localidades al select
+        localidades.forEach(function (localidad) {
+          $("#localidad").append(`<option value="${localidad}">${localidad}</option>`);
+        });
+
+        // Limpiar el select de barrios
+        $("#barrio").empty().append('<option value="" disabled selected>Seleccionar Barrio</option>');
+      });
+
+      // Función para cargar los barrios de la localidad seleccionada
+      $("#localidad").change(function () {
+        const localidad = $(this).val();
+        const barrios = barriosPorLocalidad[localidad];
+
+        // Limpiar el select de barrios
+        $("#barrio").empty().append('<option value="" disabled selected>Seleccionar Barrio</option>');
+
+        // Agregar los barrios al select
+        barrios.forEach(function (barrio) {
+          $("#barrio").append(`<option value="${barrio}">${barrio}</option>`);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
