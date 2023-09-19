@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ferrementum", "Ferrementum\Ferrementum.csproj", "{6524E56D-D5F0-46CE-8747-EE8A44B6381A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6524E56D-D5F0-46CE-8747-EE8A44B6381A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6524E56D-D5F0-46CE-8747-EE8A44B6381A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6524E56D-D5F0-46CE-8747-EE8A44B6381A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6524E56D-D5F0-46CE-8747-EE8A44B6381A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7B65A9F-D002-4DB7-BB7F-DA83380CF5C2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,49 @@
+﻿@model Ferrementum.Models.Usuario
+
+@{
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo usuario</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Registrar","Usuario")" method="post">
+                    <div class="form-group">
+                        <label>Num Documento</label>
+                        <input type="number" class="form-control" name="Documento" />
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" name="Nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido</label>
+                        <input type="text" class="form-control" name="Apellido" />
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="text" class="form-control" name="Contrasena" />
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="text" class="form-control" name="Correo" />
+                    </div>
+                    <div class="form-group">
+                        <label>Ciudad</label>
+                        <input type="text" class="form-control" name="Ciudad" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","Usuario")">Volver</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
