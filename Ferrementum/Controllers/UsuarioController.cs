@@ -53,6 +53,17 @@ namespace Ferrementum.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Editar(int? num_doc)
+        {
+            if(num_doc == null)
+                return RedirectToAction("Inicio", "Usuario");
+
+            Usuario ousuario = olista.Where(c => c.Num_doc == num_doc).FirstOrDefault();
+
+            return View(ousuario);
+        }
+
         [HttpPost]
         public ActionResult Registrar(Usuario ousuario)
         {
@@ -73,5 +84,27 @@ namespace Ferrementum.Controllers
 
             return RedirectToAction("Inicio","Usuario");
         }
+
+        [HttpPost]
+        public ActionResult Editar(Usuario ousuario)
+        {
+
+            using (SqlConnection oconexion = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("us_Editar", oconexion);
+                cmd.Parameters.AddWithValue("Num_doc", ousuario.Num_doc);
+                cmd.Parameters.AddWithValue("Nombre_us", ousuario.Nombre);
+                cmd.Parameters.AddWithValue("Apellido_us", ousuario.Apellido);
+                cmd.Parameters.AddWithValue("Contraseña", ousuario.Contrasena);
+                cmd.Parameters.AddWithValue("Correo", ousuario.Correo);
+                cmd.Parameters.AddWithValue("Ciudad", ousuario.Ciudad);
+                cmd.CommandType = CommandType.StoredProcedure;
+                oconexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+
+            return RedirectToAction("Inicio", "Usuario");
+        }
+
     }
 }
