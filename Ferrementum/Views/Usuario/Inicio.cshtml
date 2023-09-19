@@ -39,7 +39,7 @@
                                 <td>@item.Correo</td>
                                 <td>@item.Ciudad</td>
                                 <td>
-                                    <a class="btn btn-primary btn-sm">Editar</a>
+                                    <a class="btn btn-primary btn-sm" href="@Url.Action("Editar","Usuario", new {num_doc = item.Num_doc})">Editar</a>
                                     <a class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
                             </tr>
