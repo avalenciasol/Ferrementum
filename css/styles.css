@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #E0E0E0;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
     column-gap: 30px;
 }
 
@@ -26,7 +26,7 @@
     top: 200px;
     width: 100%;
     padding: 30px;
-    border-radius: 6px;
+    border-radius: 15px;
     background: #F5F5F5;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
@@ -110,7 +110,7 @@ form {
     height: 50px;
     width: 100%;
     margin-top: 20px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
 }
 
 /* personalización de la fuente tipografica, tamaño, borde y radio del borde
@@ -121,8 +121,7 @@ form {
     width: 100%;
     border: none;
     font-size: 16px;
-    font-weight: 400;
-    border-radius: 6px;
+    
 }
 
 /* personalización de los campos tipo input */
@@ -132,7 +131,9 @@ form {
     background-color:#E0E0E0;
     outline: none;
     border: 1px solid #c9c9c9;
+    border-radius: 6px;
     padding: 25px 15px;
+    font-weight: 400;
 }
 
 /* personalización del icono de visualización de la contraseña */
@@ -223,12 +224,16 @@ form {
 
 /* personalización del campo tipo button */
 .field button {
-    color: #FFFDFD;
-    background-color: #FF7C0A;
+    color: #1F1F1F;
+    font-weight: 600;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
     border: transparent;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    border-radius: 15px;
 }
+
+
 
 /* al pasar el mouse, aumente el tamaño del botón */
 .field button:hover {
@@ -249,7 +254,7 @@ form {
 
 /* personalización de la tipografia del hipervinculo */
 .form a {
-    color: #FF7C0A;
+    color: #f7a60f;
     text-decoration: none;
 }
 
@@ -288,6 +293,7 @@ a.facebook {
     color: #FFFDFD;
     background-color: #4267B2;
     transition: all 0.2s ease-in-out;
+    border-radius: 15px;
 }
 
 a.facebook:hover {
@@ -325,6 +331,7 @@ a.google {
     font-weight: 500;
     background-color: #E0E0E0;
     transition: all 0.2s ease-in-out;
+    border-radius: 15px;
 }
 
 a.google:hover {
@@ -362,19 +369,28 @@ a.google:hover {
 }
 
 .hFrC {
+    display: fixed;
+    width: 100%;
     display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
     height: 130px;
-    background-color: #FF7C0A;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
+    box-shadow: 0 4px 41px rgba(55, 41, 14, 0.50);
+    padding: 15px 10%;
+    transition: 0.2s;
     /* margin-bottom: 8px; */
-    /* border-bottom: 1px solid #E0E0E0; */
+    border-bottom: 1px  rgb(247, 166, 15);
 }
 
+
 .frLgh {
-    height: 86px;
+    height: 100px;
 }
 
 @media (min-width: 768px) {
@@ -517,10 +533,10 @@ a.google:hover {
     -webkit-tap-highlight-color: transparent;
     font-size: 14px;
     line-height: 20px;
-    font-weight: 400;
+    font-weight: 600;
     background-color: transparent;
     border: 0px;
-    border-radius: 6px;
+    border-radius: 15px;
     display: inline-block;
     position: relative;
     text-align: center;
@@ -539,9 +555,9 @@ a.google:hover {
 
 .eOmOwu {
     position: relative;
-    background-color: var(--background-base,#FF7C0A);
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
     color: var(--text-base,#ffffff);
-    border-radius: 6px;
+    border-radius: 15px;
     font-size: inherit;
     padding-block: 14px;
     padding-inline: 32px;
