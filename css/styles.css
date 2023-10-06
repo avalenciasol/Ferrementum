@@ -27,8 +27,8 @@
     width: 100%;
     padding: 30px;
     border-radius: 15px;
-    background: #F5F5F5;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.20);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.23);
 }
 
 .form.acceso {
@@ -130,8 +130,8 @@ form {
     color: #1F1F1F;
     background-color:#E0E0E0;
     outline: none;
-    border: 1px solid #c9c9c9;
-    border-radius: 6px;
+    border: none;
+    border-radius: 8px;
     padding: 25px 15px;
     font-weight: 400;
 }
@@ -181,9 +181,9 @@ form {
     left: 0;
     height: 14px;
     width: 14px;
-    background-color: #F5F5F5;
-    border: 1px solid #7a7a7a;
-    border-radius: 3px;
+    background-color: rgba(255,255,255,0.50);
+    border: none;
+    border-radius: 6px;
 }
 
 /* Al pasar el mouse, agregue un color naranja al borde */
@@ -226,7 +226,7 @@ form {
 .field button {
     color: #1F1F1F;
     font-weight: 600;
-    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
+    background-color:rgb(247, 166, 15);
     border: transparent;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
@@ -254,7 +254,7 @@ form {
 
 /* personalización de la tipografia del hipervinculo */
 .form a {
-    color: #f7a60f;
+    color: #cc8707;
     text-decoration: none;
 }
 
@@ -268,7 +268,7 @@ form {
      height: 1px;
      width: 100%;
      margin: 36px 0;
-     background-color: #E0E0E0;
+     background-color: #f7a60f;
 }
 
 .line::before {
@@ -277,7 +277,8 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #F5F5F5;
+    background-color: #f7a60f;
+    border-radius: 6px;
     color: #1F1F1F;
     padding: 0 15px;
 }
@@ -379,42 +380,47 @@ a.google:hover {
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    height: 130px;
+    height: 140px;
     background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
-    box-shadow: 0 4px 41px rgba(55, 41, 14, 0.50);
+    /* box-shadow: 0 4px 41px rgba(55, 41, 14, 0.50); */
     padding: 15px 10%;
     transition: 0.2s;
     /* margin-bottom: 8px; */
-    border-bottom: 1px  rgb(247, 166, 15);
+    /* border-bottom: 1px  rgb(247, 166, 15); */
 }
 
 
 .frLgh {
-    height: 100px;
+    height: 120px;
 }
 
 @media (min-width: 768px) {
     .frLgh {
-        height: 100px;
+        height: 130px;
     }
 }
 
 /* ----------------- RECUPERAR CONTRASEÑA -------------------- */
 .rcHn2 {
+    display: fixed;
+    width: 100%;
     display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    height: 130px;
+    height: 140px;
     background-color: #ffffff;
     margin-bottom: 8px;
-    border-bottom: 1px solid #E0E0E0;
+    /* border-bottom: 1px solid #E0E0E0; */
 }
 
 @media (min-width: 768px) {
     .rcHn2 {
-        height: 110px;
+        height: 145px;
         margin-bottom: 16px;
     }
 }
