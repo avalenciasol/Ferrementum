@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     body {
-      background-color: #E0E0E0;
+      background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
     }
 
     .container {
-      background-color: #F5F5F5;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+      background: rgba(255,255,255,0.20);
       color: #030303;
-      border-radius: 10px;
+      border-radius: 15px;
       max-width: 500px;
       margin: 0 auto;
       padding: 20px;
@@ -25,14 +26,16 @@
     }
 
     .form-control {
-      background-color:#E0E0E0;
+      background-color:#ffffff;
       color: #6e6e6e;
       border: 2px solid #c8c7c7;
     }
     .btn-primary {
-      color: #FFFDFD;
-    background-color: #FF7C0A;
+      font-weight: bold;
+      color: #000000;
+      background-color: rgb(247, 166, 15);
     border: transparent;
+    border-radius: 15px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     }
@@ -117,170 +120,7 @@
     </form>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      const localidadesPorCiudad = {
-        "Bogota": [
-          "Usaquén",
-          "Chapinero",
-          "Santa Fe",
-          "San Cristóbal",
-          "Usme",
-          "Tunjuelito",
-          "Bosa",
-          "Kennedy",
-          "Fontibón",
-          "Engativá",
-          "Suba",
-          "Barrios Unidos",
-          "Teusaquillo",
-          "Los Mártires",
-          "Antonio Nariño",
-          "Puente Aranda",
-          "La Candelaria",
-          "Rafael Uribe Uribe",
-          "Ciudad Bolívar",
-          "Sumapaz"
-        ],
-        // Agrega aquí las localidades de las demás ciudades
-      };
-
-      const barriosPorLocalidad = {
-        "Usaquén": [
-          "Santa Bárbara",
-          "Rosales",
-          "La Carolina"
-        ],
-        "Chapinero": [
-          "Santa Ana",
-          "Chapinero Central",
-          "El Retiro"
-        ],
-        "Santa Fe": [
-          "La Candelaria",
-          "Las Nieves",
-          "La Macarena"
-        ],
-        "San Cristóbal": [
-          "San Cristóbal Norte",
-          "San Cristóbal Sur",
-          "San Blas"
-        ],
-        "Usme": [
-          "Las Mercedes",
-          "Usme Centro",
-          "Danubio"
-        ],
-        "Tunjuelito": [
-          "El Tesoro",
-          "Gran Yomasa",
-          "Tunjuelito Centro"
-        ],
-        "Bosa": [
-          "Venecia",
-          "El Carmen",
-          "San Rafael"
-        ],
-        "Kennedy": [
-          "Bosa Centro",
-          "Bosa Nova",
-          "San Bernardino"
-        ],
-        "Fontibón": [
-          "El Porvenir",
-          "Kennedy Central",
-          "Castilla"
-        ],
-        "Engativá": [
-          "Carvajal",
-          "Timiza",
-          "Fontibón Central"
-        ],
-        "Suba": [
-          "Modelia",
-          "Zona Franca",
-          "Calle 26"
-        ],
-        "Barrios Unidos": [
-          "Engativá Central",
-          "El Cedro",
-          "Los Álamos"
-        ],
-        "Teusaquillo": [
-          "La Soledad",
-          "Galán",
-          "Metrópolis"
-        ],
-        "Los Mártires": [
-          "San Bernardo",
-          "Santa Isabel",
-          "La Estanzuela"
-        ],
-        "Antonio Nariño": [
-          "El Rincón",
-          "Bolivia",
-          "Restrepo"
-        ],
-        "Puente Aranda": [
-          "Córdoba",
-          "Las Ferias",
-          "San Miguel"
-        ],
-        "La Candelaria": [
-          "Las Cruces",
-          "La Concordia",
-          "Belén"
-        ],
-        "Rafael Uribe Uribe": [
-          "Quiroga",
-          "Veinte de Julio",
-          "La Victoria"
-        ],
-        "Ciudad Bolívar": [
-          "Mochuelo Bajo",
-          "El Paraíso",
-          "Lijacá"
-        ],
-        "Sumapaz": [
-          "San Juan",
-          "Serranías",
-          "Chapinero Rural"
-        ],
-        // Agrega aquí los barrios de las demás localidades
-      };
-
-      // Función para cargar las localidades de la ciudad seleccionada
-      $("#ciudad").change(function () {
-        const ciudad = $(this).val();
-        const localidades = localidadesPorCiudad[ciudad];
-
-        // Limpiar el select de localidades
-        $("#localidad").empty().append('<option value="" disabled selected>Seleccionar Localidad</option>');
-
-        // Agregar las localidades al select
-        localidades.forEach(function (localidad) {
-          $("#localidad").append(`<option value="${localidad}">${localidad}</option>`);
-        });
-
-        // Limpiar el select de barrios
-        $("#barrio").empty().append('<option value="" disabled selected>Seleccionar Barrio</option>');
-      });
-
-      // Función para cargar los barrios de la localidad seleccionada
-      $("#localidad").change(function () {
-        const localidad = $(this).val();
-        const barrios = barriosPorLocalidad[localidad];
-
-        // Limpiar el select de barrios
-        $("#barrio").empty().append('<option value="" disabled selected>Seleccionar Barrio</option>');
-
-        // Agregar los barrios al select
-        barrios.forEach(function (barrio) {
-          $("#barrio").append(`<option value="${barrio}">${barrio}</option>`);
-        });
-      });
-    });
+ 
   </script>
 </body>
 
