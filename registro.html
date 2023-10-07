@@ -41,16 +41,19 @@
                             <input type="text" placeholder="Ingresa tu apellido" required>
                         </div>
 
-                        <div class="field input-field">
-                            <label>Tipo de documento</label>
-                            <select required>
-                                <option disabled selected>Seleccionar</option>
-                                <option>TI</option>
-                                <option>CC</option>
-                                <option>CE</option>
-                                <option>NIT</option>
-                                <option>PAS</option>
-                            </select>
+                        <div class="field input-field dropdown">
+                            <label>Tipo de documento</label>    
+                            <div class="select">
+                                <span class="selected">CC</span>
+                                <div class="caret"></div>
+                            </div>
+                            <ul class="menu">
+                                <li>TI</li>   
+                                <li class="active">CC</li>    
+                                <li>CE</li>    
+                                <li>NIT</li>    
+                                <li>PAS</li>
+                            </ul>        
                         </div>
 
                         <div class="field input-field">
@@ -110,4 +113,8 @@
     </section>
 
 </body>
+
+<!-- Javascript -->
+<script src="js\script.js"></script>
+
 </html>
