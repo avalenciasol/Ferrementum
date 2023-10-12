@@ -375,6 +375,7 @@ a.facebook {
 
 a.facebook:hover {
     transform: scale(1.03);
+    text-decoration: none;
 }
 
 a.facebook .facebook-icon {
@@ -406,13 +407,14 @@ img.google-img {
 a.google {
     color: #333333;
     font-weight: 500;
-    background-color: #E0E0E0;
+    background-color: #f5f5f5;
     transition: all 0.2s ease-in-out;
     border-radius: 15px;
 }
 
 a.google:hover {
     transform: scale(1.03);
+    text-decoration: none;
 }
 
 @media screen and (max-width:400px) {
