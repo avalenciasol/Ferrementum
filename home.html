@@ -7,12 +7,79 @@
     <title>Ferrementum</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="css\home.css">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-    
+    <header role="banner" class="nav-header">
+        <div class="nav-bounds">
+            <div class="nav-header-plus-logo nav-area nav-top-area nav-left-area">
+                <a id="nav-skip-to-main-content" role="button" href="css\home.css" class="nav-skip-to-main-content" aria-label="Saltar al contenido">
+                    <span class="nav-skip-to-main-content__content">Saltar al contenido</span>
+                </a>
+                <a href="css\home.css" class="nav-logo">Ferrementum</a>
+            </div>
+            <div class="nav-area nav-top-area nav-center-area">
+                <form action="#" class="nav-search" method="GET" role="search" style="display: inherit;">
+                    <label class="nav-header-visually-hidden" for="cb1-edit">Ingresa lo que quieras encontrar</label>
+                    <input type="text" class="nav-search-input" id="cb1-edit" aria-label="Ingresa lo que quieras encontrar" name="as_word" placeholder="Buscar productos, marcas y más..." maxlength="120" autofocus autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" value aria-activedescendant aria-controls="cb1-list" aria-autocomplete="list" aria-expanded="false" role="combobox">
+                    <button type="submit" class="nav-search-btn">
+                        <div role="img" aria-label="Buscar" class="nav-icon-search"></div>
+                    </button>
+                    <div class="sb-suggestions" id="sb-suggestions-1" aria-hidden="true" style="display: none; top: 40px; width: 580px; position: absolute;">
+                        <ul class="sb-suggestions__list" role="listbox" id="cb1-list"></ul>
+                        <div class="sb-suggestions__wrapper--additional">
+                            <ul class="sb-suggestions__list--additional"></ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="nav-header-plus-menu-wrapper nav-area nav-top-area nav-right-area">
+                <nav id="nav-header-menu">
+                    <a href="registro.html" data-link-id="registration" rel="nofollow">Crea tu cuenta</a>
+                    <a href="acceso.html" data-link-id="login" rel="nofollow">Ingresa</a>
+                    <a href="#" data-link-id="purchases" rel="nofollow">Mis compras</a>
+                </nav>
+                <a href="carrito.html" title="Carrito" id="nav-cart" class="nav-cart nav-cart-empty">
+                    <i class="nav-icon-cart"></i>
+                    <span class="nav-header-visually-hidden">0 productos en tu carrito</span>
+                    <span class="nav-icon-cart-quantity"></span>
+                </a>
+            </div>
+            <div class="nav-area nav-bottom-area nav-left-area">
+                <div class="nav-menu-item">
+                    <a href="#" class="nav-menu-categories-link" data-js="nav-menu-categories-trigger" rel="nofollow" aria-expanded="false" role="button">"Categorías"</a>
+                    <div class="nav-categs" data-js="nav-categs" aria-label="Categorías" aria-modal="true" tabindex="-1" role="dialog" hidden="hidden">
+                        <ul class="nav-categs-departments" data-js="nav-categs-departments">
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Construcción</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Madera</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Electricidad</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Herramientas</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Baño y Fontanería</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Ferretería</a>
+                            </li>
+                            <li class="nav-categs-departments__list">
+                                <a href="#">Pintura</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-area nav-bottom-area nav-center-area"></div>
+            <div class="nav-header-plus-cp-wrapper nav-area nav-bottom-area nav-right-area"></div>
+        </div>
+    </header>
 </body>
 </html>
