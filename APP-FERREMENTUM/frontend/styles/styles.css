@@ -1,0 +1,685 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Fondo página */
+.formulario {
+    height: 130vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
+    column-gap: 30px;
+}
+
+/* Contenedor formulario */
+.form {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.20);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+}
+
+.form.acceso {
+    max-width: 430px;
+}
+
+.form.registro {
+    max-width: 860px;
+    min-height: 490px;
+    margin: 15px 15px;
+}
+
+header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1F1F1F;
+    text-align: left;
+}
+
+form {
+    margin-top: 10px;
+}
+
+/*  alineación, justificación y flexibilidad de los campos
+    en el formulario de registro */
+.form.registro .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* tamaño, flexibiladad y margenes de los campos tipo input
+    en el formulario de registro */
+.form.registro .fields .input-field {
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+    height: 70px;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #1F1F1F;
+}
+
+/* personalizar el campo de seleccionar */
+.dropdown {
+    min-width: 15em;
+    position: relative;
+    margin: 2em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: #f5f5f5;
+    color: #1F1F1F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #f5f5f5 solid;
+    border-radius: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 50px;
+    margin: 4px 0;
+}
+
+/* estilos seleccionados (js) */
+.select-clicked {
+    border: 2px #f7a60f solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.select:hover {
+    background: #ecebeb;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: 0.3s;
+}
+
+/* estilos rotacion (js) */
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #f5f5f5;
+    border: 2px #f5f5f5 solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+    border-radius: 8px;
+    color: #1F1F1F;
+    position: absolute;
+    top: 4em;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 3;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #f8dfc3;
+}
+
+/* estilos Active (Js) */
+.active {
+    background: #f7a60f;
+}
+
+/* estilos Open (js) */
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.fields .input-field input {
+    height: 50px;
+    padding: 0 15px;
+    margin: 4px 0;
+}
+
+/* posicionamiento, tamaño y radio del borde de los campos 
+    en el formulario de acceso */
+.form .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    /* border-radius: 6px; */
+}
+
+/* personalización de la fuente tipografica, tamaño, borde y radio del borde
+    en los campos tipo input y button */
+.field input,
+.field button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    
+}
+
+/* personalización de los campos tipo input */
+.field input {
+    height: 20px;
+    color: #1F1F1F;
+    background-color:#f5f5f5;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 25px 15px;
+    font-weight: 400;
+}
+
+/* cuando el campo tipo input esta seleccionado, agregar sombras */
+.field input:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+/* personalización del icono de visualización de la contraseña */
+.eye-icon {
+    position: absolute;
+    align-items: center;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px; 
+    color: #838383;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Personalizar la casilla de verificación */
+.checkbox {
+    display: flex;
+    position: relative;
+    width: 115px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ocultar la casilla de verificación predeterminada del navegador */
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Crea una casilla de verificación personalizada */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: rgba(255,255,255,0.50);
+    border: none;
+    border-radius: 6px;
+}
+
+/* Al pasar el mouse, agregue un color naranja al borde */
+.checkbox:hover input ~ .checkmark {
+    border: 1px solid #FF7C0A;
+}
+
+/* Cuando la casilla de verificación esté marcada, agregue un fondo naranja */
+.checkbox input:checked ~ .checkmark {
+    background-color: #FF7C0A;
+    border: transparent;
+}
+
+/* Crear el indicador (oculto cuando no está marcado) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Mostrar el indicador cuando está marcado */
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Aplicar estilo al indicador */
+.checkbox .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* personalización del campo tipo button */
+.field button {
+    color: #1F1F1F;
+    font-weight: 600;
+    background-color:rgb(247, 166, 15);
+    border: transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+
+
+/* al pasar el mouse, aumente el tamaño del botón */
+.field button:hover {
+    transform: scale(1.02);
+}
+
+.form-link {
+    text-align: initial;
+    margin-top: 10px;
+}
+
+.form-link span,
+.form-link a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F1F1F;
+}
+
+/* personalización de la tipografia del hipervinculo */
+.form a {
+    color: #cc8707;
+    text-decoration: none;
+}
+
+/* al pasar el mouse, subrayar el texto del hipervinculo */
+.form-content a:hover {
+    text-decoration: underline;
+}
+
+.line {
+     position: relative;
+     height: 1px;
+     width: 100%;
+     margin: 36px 0;
+     background-color: #f7a60f;
+}
+
+.line::before {
+    content: 'ó';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f7a60f;
+    border-radius: 6px;
+    color: #1F1F1F;
+    padding: 0 15px;
+}
+
+.media-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.facebook {
+    height: 53px;
+    color: #FFFDFD;
+    background-color: #4267B2;
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px;
+}
+
+a.facebook:hover {
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+a.facebook .facebook-icon {
+    height: 28px;
+    width: 28px;
+    color: #4267B2;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFDFD;
+}
+
+.facebook-icon,
+img.google-img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+img.google-img {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+a.google {
+    color: #333333;
+    font-weight: 500;
+    background-color: #f5f5f5;
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px;
+}
+
+a.google:hover {
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+@media screen and (max-width:400px) {
+    .form {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width:500px) {
+    .form {
+        overflow-y: scroll;
+    }
+
+    .form.registro::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .form.registro .fields .input-field {
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------ */
+
+/* Header 1*/
+@media (min-width: 768px) {
+    .hFrC {
+        height: 110px;
+        /* margin-bottom: 16px; */
+    }
+}
+
+.hFrC {
+    display: fixed;
+    width: 100%;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 140px;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
+    /* box-shadow: 0 4px 41px rgba(55, 41, 14, 0.50); */
+    padding: 15px 10%;
+    transition: 0.2s;
+    /* margin-bottom: 8px; */
+    /* border-bottom: 1px  rgb(247, 166, 15); */
+}
+
+
+.frLgh {
+    height: 120px;
+}
+
+@media (min-width: 768px) {
+    .frLgh {
+        height: 130px;
+    }
+}
+
+/* ----------------- RECUPERAR CONTRASEÑA -------------------- */
+.rcHn2 {
+    display: fixed;
+    width: 100%;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 140px;
+    background-color: #ffffff;
+    margin-bottom: 8px;
+    /* border-bottom: 1px solid #E0E0E0; */
+}
+
+@media (min-width: 768px) {
+    .rcHn2 {
+        height: 145px;
+        margin-bottom: 16px;
+    }
+}
+
+.iGiiyc {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    min-height: 50vh;
+    padding: 24px;
+}
+
+.ccKuQI {
+    max-width: 450px;
+    margin: 0px auto;
+}
+
+.iUssHT {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    padding: 0px 0px 0.67em;
+    margin-block: 0px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 40px;
+    color: inherit;
+}
+
+.cKWMNS {
+    text-align: center;
+}
+
+.cFabKD {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    padding-block-end: 24px;
+    color: inherit;
+}
+
+.eDRcqt {
+    text-align: center;
+}
+
+.koDeqb {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    padding-block-end: 24px;
+}
+
+.eiOToC {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    inline-size: 100%;
+    padding-block-end: 8px;
+}
+
+.ezvJUn {
+    color: var(--text-base,#000000);
+}
+
+.cCagTa {
+    display: inline-block;
+}
+
+.ekgyrN {
+    appearance: none;
+    background-image: none;
+    border: 0px;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    transition: box-shadow 0.1s ease-in-out 0s, color 0.1s ease-in-out 0s;
+    inline-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    border-radius: 4px;
+    padding: 14px;
+    background-color: var(--background-base,#ffffff);
+    box-shadow: inset 0 0 0 1px var(--essential-subdued,#878787);
+    color: var(--text-base,#000000);
+}
+
+.ekgyrN:hover {
+    box-shadow: inset 0 0 0 1px var(--essential-subdued,#2c2c2c);
+}
+
+.hSGTGO {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.ehLhLY {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow, filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    padding: 0px;
+    min-inline-size: 0px;
+    align-self: center;
+}
+
+.eOmOwu {
+    position: relative;
+    background:linear-gradient(to left,rgb(247, 166, 15), rgb(250, 191, 81));
+    color: var(--text-base,#ffffff);
+    border-radius: 15px;
+    font-size: inherit;
+    padding-block: 14px;
+    padding-inline: 32px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.eOmOwu:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+    .iUssHT {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    .cFabKD {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+    .eiOToC {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+    .ekgyrN {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+    .ehLhLY {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+}
