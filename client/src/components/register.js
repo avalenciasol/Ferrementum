@@ -93,9 +93,9 @@ export default function Register() {
                     caret.classList.remove('caret-rotate');
                     menu.classList.remove('menu-open');
                     options.forEach(option => {
-                        option.classList.remove('active');
+                        option.classList.remove('selected');
                     });
-                    option.classList.add('active');
+                    option.classList.add('selected');
                 });
             });
         });
@@ -136,7 +136,7 @@ export default function Register() {
                             </div>
                             <ul id="documentType" name="documentType" className="menu">
                                 <li value="1" onClick={handleDocumentTypeChange}>TI</li>
-                                <li value="2" onClick={handleDocumentTypeChange} className={selectedDocumentType === 'CC' ? 'active' : ""}>CC</li>
+                                <li value="2" onClick={handleDocumentTypeChange} className={selectedDocumentType === 'CC' ? 'selected' : ""}>CC</li>
                                 <li value="3" onClick={handleDocumentTypeChange}>CE</li>
                                 <li value="4" onClick={handleDocumentTypeChange}>NIT</li>
                                 <li value="5" onClick={handleDocumentTypeChange}>PAS</li>

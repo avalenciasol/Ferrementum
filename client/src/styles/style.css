@@ -8,14 +8,92 @@
     --black-color: #1f1f1f;
 }
 
+/* Navbar */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    height: 107px;
+    padding: 0 20px;
+    background-color: #fff;
+    color: #000;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    width: 60px;
+}
+
+.navbar-logo img {
+    height: 50px;
+    width: 50px;
+    max-height: 100%;
+}
+
+.page-name {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 0px 100px 0px 0px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 100px 0 100px;
+}
+
+.search-bar input {
+    width: 360px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 20px 0 100px;
+}
+
+.buttons .btn-acceso {
+    background: transparent;
+    transition: none;
+}
+
+.buttons .btn-acceso:hover {
+    transform: none;
+    color: var(--primary-color)
+}
+
+.buttons button {
+    text-transform: uppercase;
+}
+
 /* Estilo general de la página */
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
-    background: linear-gradient(to left,#f8b538, rgb(250, 191, 81));
+    margin-top: 107px;
+    background: linear-gradient(to left, #f8b538, rgb(250, 191, 81));
     font-family: 'Poppins', sans-serif;
 }
 
@@ -159,8 +237,8 @@ header {
     background: #f8dfc3;
 }
 
-.active {
-    background: #f7a60f;
+.selected {
+    background: transparent;
 }
 
 .menu-open {
@@ -234,7 +312,7 @@ button:hover {
     .form.registro::-webkit-scrollbar {
         display: none;
     }
-    
+
     .form.registro .fields .input-field {
         width: 100%;
     }
@@ -381,9 +459,6 @@ form {
     background: #f8dfc3;
 }
 
-.active {
-    background: #f7a60f;
-}
 
 .menu-open {
     display: block;

@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import Navbar from "./components/navbar";
 import Register from "./components/register";
 
 const App = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <div style={{ margin: 20 }}>
       <Routes>
         <Route path="/register" element={<Register />} />
