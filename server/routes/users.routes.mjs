@@ -4,7 +4,7 @@ import userModel from "../schemas/users.schemas.mjs";
 const userRouter = Router();
 
 // Add a new User to the collection
-userRouter.post("/", async (req, res) => {
+userRouter.post("/register", async (req, res) => {
   const newUser = await userModel.create(req.body)
   res.status(201).send(newUser)
 })

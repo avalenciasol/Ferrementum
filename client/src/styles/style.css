@@ -1,0 +1,403 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Colores */
+:root {
+    --primary-color: #f7a60f;
+    --secondary-color: #f5f5f5;
+    --black-color: #1f1f1f;
+}
+
+/* Estilo general de la página */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo del formulario */
+.form {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo de los campos del formulario */
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-field {
+    width: calc(50% - 5px);
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+input {
+    width: 100%;
+    padding: 25px 15px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    height: 20px;
+    color: var(--black-color);
+    font-weight: 400;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo del botón */
+.button-field {
+    text-align: center;
+}
+
+button {
+    background-color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--black-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo del header */
+header {
+    color: var(--black-color);
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+/* Estilo del dropdown */
+.dropdown {
+    min-width: 15em;
+    position: relative;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: #f5f5f5;
+    color: var(--black-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #f5f5f5 solid;
+    border-radius: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 50px;
+    margin: 4px 0;
+}
+
+.select-clicked {
+    border: 2px #f7a60f solid;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.select:hover {
+    background: #ecebeb;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #f5f5f5;
+    border: 2px #f5f5f5 solid;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+    border-radius: 8px;
+    color: #1F1F1F;
+    position: absolute;
+    top: 4em;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 3;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #f8dfc3;
+}
+
+.active {
+    background: #f7a60f;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo para el campo de contraseña y confirmación */
+.field.password-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmPassword-label {
+    margin-top: 10px;
+}
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px
+}
+
+header {
+    font-size: 28px;
+    font-weight:  600;
+    color: #1f1f1f;
+    text-align: left;
+}
+
+form {
+    margin-top: 10px;
+}
+
+.form {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.20);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+}
+
+.registro {
+    max-width: 860px;
+    min-height: 490px;
+    margin: 15px 15px;
+}
+
+.registro .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.registro .fields .input-field {
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction:  column;
+    margin: 4px 0;
+    height: 70px;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #1f1f1f;
+}
+
+.dropdown {
+    min-width: 15em;
+    position: relative;
+    margin: 2em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: #f5f5f5;
+    color: #1F1F1F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #f5f5f5 solid;
+    border-radius: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 50px;
+    margin: 4px 0;
+}
+
+.select-clicked {
+    border: 2px #f7a60f solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.select:hover {
+    background: #ecebeb;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #f5f5f5;
+    border: 2px #f5f5f5 solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+    border-radius: 8px;
+    color: #1F1F1F;
+    position: absolute;
+    top: 4em;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 3;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #f8dfc3;
+}
+
+.active {
+    background: #f7a60f;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.fields .input-field input {
+    height: 50px;
+    padding: 0 15px;
+    margin: 4px 0;
+}
+
+.field input,
+.field button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    
+}
+
+.field input {
+    height: 20px;
+    color: #1F1F1F;
+    background-color:#f5f5f5;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 25px 15px;
+    font-weight: 400;
+}
+
+.field input:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+field button:hover {
+    transform: scale(1.02);
+}
+
+.form-link {
+    text-align: initial;
+    margin-top: 10px;
+}
+
+.form-link span,
+.form-link a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F1F1F;
+}
+
+.form a {
+    color: #cc8707;
+    text-decoration: none;
+}
+
+.form-content a:hover {
+    text-decoration: underline;
+} */

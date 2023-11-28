@@ -21,13 +21,18 @@ const userSchema = new Schema ({
         required: true,
         trim: true
     },
+    phone: {
+        type: String,
+        trim: true
+    },
     password: {
         type: String,
         required: true,
         trim: true
     },
-    phone: {
+    confirmPassword: {
         type: String,
+        required: true,
         trim: true
     }
 }, 
