@@ -1,7 +1,7 @@
 # Ferrementum
 Repositorio para el control de versiones de proyecto educativo.
 
-## Como correr
+## Como Inicializar 
 Crear el archivo `ferrementum/server/.env` con la URL del cluster en Atlas y el puerto del servidor:
 ```
 ATLAS_URI=mongodb+srv://<username>:<password>@prueba.szs9ffp.mongodb.net/ferrementum
@@ -9,6 +9,12 @@ ATLAS_URI=mongodb+srv://<username>:<password>@prueba.szs9ffp.mongodb.net/ferreme
 Iniciar servidor:
 ```
 cd ferrementum/server
+npm install
+npm start
+```
+Iniciar servidor web:
+```
+cd ferrementum/client
 npm install
 npm start
 ```
