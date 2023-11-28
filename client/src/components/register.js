@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import "../styles/style.css";
 
 export default function Register() {
@@ -197,6 +198,9 @@ export default function Register() {
                         <button type="submit">Registrarse</button>
                     </div>
                 </form>
+                <div className="form-link">
+                    <span>¿Ya tienes una cuenta? <Link to="/acceder" className="link-style">acceder</Link></span>
+                </div>
             </div>
         </div>
     );
