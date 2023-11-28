@@ -33,7 +33,7 @@ const userSchema = new Schema ({
 }, 
 {
     timestamps: true
-})
+});
 
 const userModel = model('users', userSchema);
 

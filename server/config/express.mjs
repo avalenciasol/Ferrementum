@@ -11,5 +11,4 @@ app.use(express.json());
 // Load the /users routes
 app.use("/users", userRouter);
 
-
 export default app;

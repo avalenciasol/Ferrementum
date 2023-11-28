@@ -42,6 +42,15 @@ userRouter.get("/:id", async (req, res) => {
   }
 });
 
+// Update the user
+userRouter.patch("/:id", async (req, res) => {
+  const updateUsers = await userModel.findOneAndUpdate (
+    { _id: req.params.id}, 
+    req.body, 
+    { new: true }
+  )
+  res.status(200).send(updateUsers)
+})
 
 // Update the user with a new email
 userRouter.patch("/email/:id", async (req, res) => {
@@ -61,15 +70,6 @@ userRouter.patch("/email/:id", async (req, res) => {
     res.status(500).send('Error en el servidor');
   }
 });
-
-userRouter.patch("/:id", async (req, res) => {
-  const updateUsers = await userModel.findOneAndUpdate (
-    { _id: req.params.id}, 
-    req.body, 
-    { new: true }
-  )
-  res.status(200).send(updateUsers)
-})
 
 // Delete an entry
 userRouter.delete("/:id", async (req, res) => {
