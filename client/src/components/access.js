@@ -23,7 +23,7 @@ export default function Access() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:5050/users/access", {
+            const response = await fetch("http://localhost:5050/auth/access", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

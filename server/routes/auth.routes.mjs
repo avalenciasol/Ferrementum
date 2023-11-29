@@ -1,8 +1,8 @@
 import { Router } from 'express';
+import authenticateToken from "../middlewares/authMiddleware.mjs";
 import userModel from "../schemas/users.schemas.mjs";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { authenticateToken } from "../middlewares/authMiddleware.mjs";
 
 const authRouter = Router();
 

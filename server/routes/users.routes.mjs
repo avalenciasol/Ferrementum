@@ -1,11 +1,18 @@
 import { Router } from 'express';
+import bcrypt from "bcrypt";
 import userModel from "../schemas/users.schemas.mjs";
 
 const userRouter = Router();
 
 // Add a new User to the collection
 userRouter.post("/register", async (req, res) => {
-  const newUser = await userModel.create(req.body)
+  const newUser = new userModel({
+    ...req.body,
+    password: await bcrypt.hash(req.body.password, 10),
+  });
+
+  await newUser.save();
+
   res.status(201).send(newUser)
 })
 
