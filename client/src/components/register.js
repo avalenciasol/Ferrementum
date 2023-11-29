@@ -66,6 +66,10 @@ export default function Register() {
 
         setSelectedDocumentType("CC");
 
+        if (Response.ok) {
+            alert("Usuario creado exitosamente");
+        }
+
         navigate("/");
     }
 
@@ -199,7 +203,7 @@ export default function Register() {
                     </div>
                 </form>
                 <div className="form-link">
-                    <span>¿Ya tienes una cuenta? <Link to="/acceder" className="link-style">acceder</Link></span>
+                    <span>¿Ya tienes una cuenta? <Link to="/access" className="link-style">acceder</Link></span>
                 </div>
             </div>
         </div>

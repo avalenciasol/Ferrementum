@@ -19,8 +19,8 @@ export default function Navbar() {
                     <button type="submit">Buscar</button>
                 </div>
                 <div className="buttons">
-                    <button className="btn-acceso">Iniciar Sesión</button>
-                    <NavLink className="navbar-cart" to="/">
+                    <NavLink className="btn-acceso" to="/access">Iniciar Sesión</NavLink>
+                    <NavLink className="navbar-cart" to="/cart">
                         <img alt="cart logo" src="../assets/cart.png"></img>
                     </NavLink>
                 </div>
