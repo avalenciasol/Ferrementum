@@ -39,10 +39,11 @@ export default function Access() {
 
                 // Almacena el token en el localStorage
                 localStorage.setItem("token", token);
+                
                 console.log("Token almacenado:", token);
                 alert("Usuario autenticado");
 
-                navigate("/profile/*");
+                navigate("/profile");
             } else {
                 const errorData = await response.json();
                 console.error("Error en el inicio de sesión:", errorData.error);

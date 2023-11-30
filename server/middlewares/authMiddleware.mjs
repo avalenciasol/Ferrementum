@@ -1,26 +1,37 @@
 import jwt from "jsonwebtoken";
+import asyncHandler from "express-async-handler";
+import userModel from "../schemas/users.schemas.mjs";
 
-const authenticateToken = (req, res, next) => {
-    const token = req.header('Authorization');
+const protect = asyncHandler(async (req, res, next) => {
+    let token
 
-    if (!token) {
-        return res.status(401).json({ error: 'Acceso no autorizado. Token no proporcionado.' });
+    if (
+        req.headers.authorization &&
+        req.headers.authorization.startsWith('Bearer')
+    ) {
+        try {
+            // Get token from header
+            token = req.headers.authorization.split(' ')[1]
+
+            // Verify token
+            const decoded = jwt.verify(token, process.env.JWT_SECRET)
+
+            // Get user from the token
+            req.user = await userModel.findOne({ email: decoded.email }).select('-password')
+
+            next()
+        } catch (error) {
+            console.log(error)
+            res.status(401)
+            throw new Error('Not authorized')
+        }
     }
 
-    console.log('Token recibido:', token);
+    if (!token) {
+        res.status(401)
+        console.error('Error al verificar el token:', error);
+        throw new Error('Not authorized, no token')
+    }
+})
 
-    jwt.verify(token, 'secreto', (err, user) => {
-        if (err) {
-            console.error('Error al verificar el token:', err);
-            return res.status(403).json({ error: 'Acceso no autorizado. Token no válido.' });
-        }
-
-        console.log('Usuario autenticado:', user);
-
-        // Agregar el usuario autenticado al objeto de solicitud para su uso posterior
-        req.user = user;
-        next();
-    });
-};
-
-export default authenticateToken;
+export default protect;
