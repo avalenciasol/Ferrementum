@@ -22,7 +22,12 @@ authRouter.post('/access', async (req, res) => {
             return res.status(401).json({ error: 'Contraseña incorrecta' });
         }
 
-        const token = jwt.sign({ userId: user._id, email: user.email }, 'secreto', { expiresIn: '1h' });
+        const token = jwt.sign({ 
+            userId: user._id, 
+            email: user.email, 
+            firstname: user.firstname, 
+            lastname: user.lastname 
+        }, 'secreto', { expiresIn: '1h' });
 
         res.json({ token });
     } catch (error) {
@@ -32,8 +37,13 @@ authRouter.post('/access', async (req, res) => {
 });
 
 // Ruta protegida que requiere autenticación
-authRouter.get('/user-data', authenticateToken, (req, res) => {
-    res.json({ userData: req.user });
+authRouter.get('/profile', authenticateToken, (req, res) => {
+    console.log('Ruta del perfil llamada');
+    //Acceso permitido solo si el token es válido
+
+    const { firstname, lastname, email } = req.user;
+    console.log('Datos del usuario:', req.user);
+    res.json({ firstname, lastname, email, message: 'Perfil del usuario' });
 });
 
 export default authRouter;

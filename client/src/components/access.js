@@ -9,8 +9,7 @@ export default function Access() {
         password: "",
     });
 
-    const [token, setToken] = useState(null);
-
+    const [token, setToken] = useState(localStorage.getItem("token") || null);
     const navigate = useNavigate();
 
     function updateForm(value) {
@@ -37,7 +36,13 @@ export default function Access() {
             if (response.ok) {
                 const { token } = await response.json();
                 setToken(token);
-                navigate("/");
+
+                // Almacena el token en el localStorage
+                localStorage.setItem("token", token);
+                console.log("Token almacenado:", token);
+                alert("Usuario autenticado");
+
+                navigate("/profile/*");
             } else {
                 const errorData = await response.json();
                 console.error("Error en el inicio de sesión:", errorData.error);
@@ -46,10 +51,6 @@ export default function Access() {
             console.error("Error en la solicitud:", error);
         }
     };
-
-    if (token) {
-        alert("Usuario autenticado");
-    }
 
     return (
         <div className="form acceso">
