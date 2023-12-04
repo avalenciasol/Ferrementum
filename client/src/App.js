@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Register from "./components/register";
 import Access from "./components/access";
+import Profile from "./components/profile";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/access" element={<Access />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </div>

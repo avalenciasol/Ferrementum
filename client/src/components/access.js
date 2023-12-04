@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setToken } from "../slices/authSlice";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import "../styles/style.css";
@@ -9,20 +11,18 @@ export default function Access() {
         password: "",
     });
 
-    const [token, setToken] = useState(localStorage.getItem("token") || null);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function updateForm(value) {
-        return setForm((prev) => {
-            return { ...prev, ...value };
-        });
+        setForm((prev) => ({ ...prev, ...value }));
     }
 
     async function onSubmit(e) {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:5050/auth/access", {
+            const response = await fetch("http://localhost:5050/users/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -33,21 +33,18 @@ export default function Access() {
                 }),
             });
 
+            console.log('Response:', response);
+
             if (response.ok) {
-                const { token } = await response.json();
-                setToken(token);
+                const result = await response.json();
+                dispatch(setToken(result.token));
 
-                // Almacena el token en el localStorage
-                localStorage.setItem("token", token);
-                
-                console.log("Token almacenado:", token);
-                alert("Usuario autenticado");
-
+                console.log('Login successful, navigating to /profile');
                 navigate("/profile");
             } else {
-                const errorData = await response.json();
-                console.error("Error en el inicio de sesión:", errorData.error);
-            }
+                console.error("Error en el inicio de sesión:", response.status, response.statusText);
+              }
+
         } catch (error) {
             console.error("Error en la solicitud:", error);
         }
@@ -86,11 +83,6 @@ export default function Access() {
                             <Link to="/" className="link-style">¿Olvidaste la contraseña?</Link>
                         </div>
 
-                        {/* <label className="checkbox">
-                            <input type="checkbox" />
-                            <span className="checkmark"></span>
-                            Recuérdame
-                        </label> */}
                     </div>
 
                     <div className="field button-field">

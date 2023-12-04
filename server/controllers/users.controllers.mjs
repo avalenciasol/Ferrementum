@@ -49,17 +49,19 @@ const login = asyncHandler(async (req, res) => {
   const user = await userModel.findOne({ email });
 
   if (user && (await bcrypt.compare(password, user.password))) {
-    res.json({
+    const token = generateToken(user.email);
+
+    res.status(200).json({
       firstname: user.firstname,
       lastname: user.lastname,
       email: user.email,
-      token: generateToken(user.email),
-    })
+      token,
+      message: 'Autenticación exitosa',
+    });
   } else {
-    res.status(400)
-    throw new Error('Invalid credentials')
+    res.status(400).json({ error: 'Invalid credentials' });
   }
-})
+});
 
 // @desc Get user data
 // @route GET /users/profile
