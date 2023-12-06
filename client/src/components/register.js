@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import "../styles/style.css";
+import "../styles/register.css";
 
 export default function Register() {
     const [form, setForm] = useState({
@@ -106,11 +106,11 @@ export default function Register() {
     }, []);
 
     return (
-        <div className="form registro">
+        <div className="registro">
             <div className="form-content">
-                <header>Crea una cuenta nueva</header>
+                <header className="hd-registro">Crea una cuenta nueva</header>
                 {/* <!-- Campos formulario --> */}
-                <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} className="register-form">
                     <div className="fields">
                         <div className="field input-field">
                             <label htmlFor="firstname">Primer Nombre</label>
@@ -189,7 +189,7 @@ export default function Register() {
                         <div className="field input-field">
                             <label htmlFor="confirmPassword">Confirmar Contraseña</label>
                             <input
-                                type="password" // Cambiado a tipo password para ocultar la entrada
+                                type="password" 
                                 placeholder="Confirma tu contraseña"
                                 id="confirmPassword"
                                 value={form.confirmPassword}
@@ -199,7 +199,7 @@ export default function Register() {
                     </div>
 
                     <div className="field button-field">
-                        <button type="submit">Registrarse</button>
+                        <button type="submit" className="btn-register">Registrarse</button>
                     </div>
                 </form>
                 <div className="form-link">

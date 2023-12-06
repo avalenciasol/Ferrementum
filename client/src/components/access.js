@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setToken } from "../slices/authSlice";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import "../styles/style.css";
+import "../styles/access.css";
 
 export default function Access() {
     const [form, setForm] = useState({
@@ -37,6 +37,7 @@ export default function Access() {
 
             if (response.ok) {
                 const result = await response.json();
+                
                 dispatch(setToken(result.token));
 
                 console.log('Login successful, navigating to /profile');
@@ -51,10 +52,10 @@ export default function Access() {
     };
 
     return (
-        <div className="form acceso">
+        <div className="acceso">
             <div className="form-content">
-                <header>Inicia Sesión</header>
-                <form onSubmit={onSubmit}>
+                <header className="hd-access">Inicia Sesión</header>
+                <form onSubmit={onSubmit} className="access-form">
                     <div className="access fields">
                         <div className="field input-field">
                             <label htmlFor="email">Correo</label>
@@ -86,7 +87,7 @@ export default function Access() {
                     </div>
 
                     <div className="field button-field">
-                        <button type="submit">Acceder</button>
+                        <button type="submit" className="btn-access">Acceder</button>
                     </div>
                 </form>
 

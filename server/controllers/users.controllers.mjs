@@ -70,6 +70,53 @@ const profile = asyncHandler(async (req, res) => {
   res.status(200).json(req.user);
 })
 
+// @desc Update user data
+// @route PUT /users/edit-profile
+// @access Private
+const editProfile = asyncHandler(async (req, res) => {
+  const { email, phone, password, confirmPassword } = req.body;
+
+  const updatedUser = await userModel.findOneAndUpdate(
+    { _id: req.user._id },
+    {
+      $set: {
+        email: email || req.user.email,
+        phone: phone || req.user.phone,
+        password: password ? await bcrypt.hash(password, 10) : req.user.password,
+        confirmPassword: confirmPassword || req.user.confirmPassword
+      },
+    },
+    { new: true }
+  );
+
+  if (!updatedUser) {
+    res.status(404).json({ message: 'Usuario no encontrado' });
+    return;
+  }
+
+  res.status(200).json({
+    firstname: updatedUser.firstname,
+    lastname: updatedUser.lastname,
+    email: updatedUser.email,
+    message: 'Perfil actualizado exitosamente',
+  });
+
+})
+
+// @desc Delete user data
+// @route DELETE /users/delete-user
+// @access Private
+const deleteUser = asyncHandler(async (req, res) => {
+  const deletedUser = await userModel.findByIdAndDelete(req.user._id);
+
+  if (!deletedUser) {
+    res.status(404).json({ message: 'Usuario no encontrado' });
+    return;
+  }
+
+  res.status(200).json({ message: 'Usuario eliminado exitosamente' });
+})
+
 // Generate JWT
 const generateToken = (email) => {
   return jwt.sign({ email }, process.env.JWT_SECRET, {
@@ -80,7 +127,9 @@ const generateToken = (email) => {
 const userController = {
   register,
   login,
-  profile
+  profile,
+  editProfile,
+  deleteUser,
 }
 
 export default userController;
