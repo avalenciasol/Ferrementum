@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Usuario, Dominio, TipoDoc, Rol
+
+admin.site.register(Usuario)
+admin.site.register(Dominio)
+admin.site.register(TipoDoc)
+admin.site.register(Rol)
