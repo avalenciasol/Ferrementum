@@ -171,3 +171,6 @@ my.cnf
 my.ini
 mysql.log
 mysql.err
+
+#-----
+/local_settings.py
