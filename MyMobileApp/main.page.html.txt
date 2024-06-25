@@ -1,0 +1,21 @@
+main.page.html
+
+<ion-heder [traslucent]="true">
+  <ion-toolbar>
+   <ion-buttons slot="star">
+    <ion-menu-button menu="m1"></ion-menu-button>
+   </ion-buttons>
+   <ion-title>Main</ion-title>
+  </ion-toolbar>
+</ion-heder>
+
+<ion-content [fullscreen]="true">
+ <ion-header collapse="condense">
+  <ion-toolbar>
+   <ion-title size="large">Main</ion-title>
+  </ion-toolbar>
+ </ion-header>
+  <ion-button [routerLink]="['/product-list']">Productos</ion-button>
+</ion-content>
+
+[]
