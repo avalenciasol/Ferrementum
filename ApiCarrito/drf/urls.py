@@ -24,3 +24,6 @@ urlpatterns = [
     path('docs/', include_docs_urls(title='Api Documentation'))
     # path('product/', include('carrito.products.urls'))
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
