@@ -20,7 +20,9 @@ Repositorio para el control de versiones de proyecto educativo.
     venv\Scripts\activate
     ```
     Linux
+    ```
     source venv/bin/activate
+    ```
 
 2. Instalar dependencias y/o librerias necesarias:
     ```
