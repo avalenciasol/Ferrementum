@@ -1,0 +1,316 @@
+create database visa_project
+create table aspirante
+(
+Documento varchar (45) not null PRIMARY KEY, 
+Tipo_doc varchar (50) not null, 
+Nombre varchar (50) not null, 
+Apellido varchar (45) not null, 
+Email varchar (60) not null, 
+Nacionalidad varchar (45) not null, 
+Edad int not null,
+Pasaporte varchar (45) not null,
+Estado_soli varchar (45) not null, 
+Id_visa int not null 
+ foreign key (Id_visa) references visa (Id_visa)
+)
+CREATE TABLE visa
+(
+Id_visa INT NOT NULL PRIMARY KEY, 
+Tipo_visa varchar (45) not null,
+fecha_exp date not null, 
+fecha_ven date not null, 
+estado varchar (30) not null
+)
+create TABLE requisitos (
+Id_requisitos int not null primary key,
+Estado_requisitos varchar (20) not null, 
+observacion Varchar (60) not null, 
+Id_visa int
+foreign key (Id_visa) references visa (Id_visa)
+)
+
+CREATE TABLE Entrevista  (
+Id_entrevista int not null primary key, 
+Orden_pago int not null, 
+Id_canciller Varchar (45) not null, 
+Entrevista date not null, 
+Estado_requisitos int
+foreign key (Estado_requisitos) references requisitos (Id_requisitos)
+)
+
+---- Insertar 10 registros aleatorios en la tabla "aspirante"
+--INSERT INTO aspirante (Documento, Tipo_doc, Nombre, Apellido, Email, Nacionalidad, Edad, Pasaporte, Estado_soli, Id_visa)
+--VALUES
+--    ('1234567890', 'Cédula', 'Juan', 'Pérez', 'juan.perez@email.com', 'Colombiana', 25, 'P123456', 'Pendiente', 1),
+--    ('9876543210', 'Pasaporte', 'Maria', 'Lopez', 'maria.lopez@email.com', 'Mexicana', 30, 'M987654', 'Aprobada', 2),
+--    ('5555555555', 'Cédula', 'Carlos', 'González', 'carlos.gonzalez@email.com', 'Argentina', 28, 'A555555', 'Rechazada', 3),
+--    ('7777777777', 'Pasaporte', 'Luisa', 'Rodríguez', 'luisa.rodriguez@email.com', 'Española', 22, 'E777777', 'Pendiente', 4),
+--    ('9999999999', 'Cédula', 'Laura', 'Torres', 'laura.torres@email.com', 'Chilena', 35, 'C999999', 'Aprobada', 5),
+--    ('1111111111', 'Pasaporte', 'Ana', 'Martínez', 'ana.martinez@email.com', 'Uruguaya', 29, 'U111111', 'Rechazada', 6),
+--    ('2222222222', 'Cédula', 'Pedro', 'Sánchez', 'pedro.sanchez@email.com', 'Venezolana', 31, 'V222222', 'Pendiente', 7),
+--    ('4444444444', 'Pasaporte', 'Sofía', 'Gómez', 'sofia.gomez@email.com', 'Peruana', 27, 'P444444', 'Aprobada', 8),
+--    ('6666666666', 'Cédula', 'Eduardo', 'Fernández', 'eduardo.fernandez@email.com', 'Boliviana', 26, 'B666666', 'Rechazada', 9),
+--    ('8888888888', 'Pasaporte', 'Marcela', 'Ortega', 'marcela.ortega@email.com', 'Paraguaya', 32, 'P888888', 'Pendiente', 10);
+
+--INSERT INTO visa (Id_visa, Tipo_visa, fecha_exp, fecha_ven, estado)
+--VALUES
+--    (1, 'Trabajo', '2023-01-15', '2023-03-15', 'Vigente'),
+--    (2, 'Estudiante', '2023-02-10', '2023-04-10', 'Vigente'),
+--    (3, 'Trabajo', '2023-03-05', '2023-05-05', 'Vigente'),
+--    (4, 'Estudiante', '2023-04-20', '2023-06-20', 'Vigente'),
+--    (5, 'Trabajo', '2023-05-15', '2023-07-15', 'Vigente'),
+--    (6, 'Estudiante', '2023-06-01', '2023-08-01', 'Vigente'),
+--    (7, 'Trabajo', '2023-07-10', '2023-09-10', 'Vigente'),
+--    (8, 'Estudiante', '2023-08-05', '2023-10-05', 'Vigente'),
+--    (9, 'Trabajo', '2023-09-30', '2023-11-30', 'Vigente'),
+-
+
+-- Insertar 10 registros aleatorios en la tabla "requisitos"
+--INSERT INTO requisitos (Id_requisitos, Estado_requisitos, observacion, Id_visa)
+--VALUES
+--    (1, 'Aprobado', 'Todos los documentos en regla', 1),
+--    (2, 'Rechazado', 'Falta de documentación', 2),
+--    (3, 'Pendiente', 'Documentos en revisión', 3),
+--    (4, 'Aprobado', 'Todo en orden', 4),
+--    (5, 'Rechazado', 'Falta de documentación financiera', 5),
+--    (6, 'Pendiente', 'Documentos en revisión', 6),
+--    (7, 'Aprobado', 'Documentos validados', 7),
+--    (8, 'Rechazado', 'Falta de documentos académicos', 8),
+--    (9, 'Pendiente', 'Documentos en revisión', 9),
+--    (10, 'Aprobado', 'Todos los requisitos cumplidos', 10);
+-- Insertar 10 registros aleatorios en la tabla "Entrevista"
+--INSERT INTO Entrevista (Id_entrevista, Orden_pago, Id_canciller, Entrevista, Estado_requisitos)
+--VALUES
+--    (1, 1001, 'Canciller1', '2023-01-10', 1),
+--    (2, 1002, 'Canciller2', '2023-02-15', 2),
+--    (3, 1003, 'Canciller3', '2023-03-20', 3),
+--    (4, 1004, 'Canciller4', '2023-04-25', 4),
+--    (5, 1005, 'Canciller5', '2023-05-30', 5),
+--    (6, 1006, 'Canciller6', '2023-06-05', 6),
+--    (7, 1007, 'Canciller7', '2023-07-10', 7),
+--    (8, 1008, 'Canciller8', '2023-08-15', 8),
+--    (9, 1009, 'Canciller9', '2023-09-20', 9),
+--    (10, 1010, 'Canciller10', '2023-10-25', 10);
+--------------------------------
+UPDATE aspirante
+SET Tipo_doc = 'NuevoTipoDoc', Documento = 'NuevoDocumento'
+WHERE Documento = '1234567890';
+-------------------------------
+SELECT a.Tipo_doc, r.observacion, a.Nombre, a.Apellido, v.Tipo_visa
+FROM aspirante a
+INNER JOIN requisitos r ON a.Id_visa = r.Id_visa
+INNER JOIN visa v ON a.Id_visa = v.Id_visa;
+----------------------
+SELECT a.Documento, a.Nombre, a.Apellido, v.Tipo_visa
+FROM aspirante a
+INNER JOIN visa v ON a.Id_visa = v.Id_visa;
+---------------------------
+SELECT a.Documento, a.Nombre, a.Apellido, v.Tipo_visa
+FROM aspirante a
+LEFT JOIN visa v ON a.Id_visa = v.Id_visa;
+--------------------------
+SELECT a.Documento, a.Nombre, a.Apellido, v.Tipo_visa
+FROM aspirante a
+RIGHT JOIN visa v ON a.Id_visa = v.Id_visa;
+------------------------
+SELECT v.Tipo_visa, COUNT(*) AS Cantidad_Aspirantes
+FROM aspirante a
+LEFT JOIN visa v ON a.Id_visa = v.Id_visa
+GROUP BY v.Tipo_visa;
+--------------
+SELECT *FROM aspirante
+SELECT *FROM visa
+SELECT *FROM entrevista
+SELECT *FROM requisitos
+-----------------
+SELECT *
+FROM Entrevista
+WHERE Estado_requisitos = 'Aprobado' OR Orden_pago = '1001';
+------------
+SELECT * FROM aspirante
+WHERE Nombre LIKE 'Mar%';
+--------------
+SELECT * FROM visa
+WHERE Tipo_visa = 'Estudiante' AND estado = 'pendiente';
+--------------
+select Tipo_visa, fecha_ven from Visa as v 
+order by  fecha_ven Desc
+------------
+SELECT * FROM Entrevista
+ORDER BY Entrevista ASC
+
+
+
+
+
+USE [master]
+GO
+/****** Object:  Database [visa_project]    Script Date: 12/10/2023 10:24:53 p. m. ******/
+CREATE DATABASE [visa_project]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'visa_project', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\visa_project.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'visa_project_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\visa_project_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [visa_project] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [visa_project].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [visa_project] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [visa_project] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [visa_project] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [visa_project] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [visa_project] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [visa_project] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [visa_project] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [visa_project] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [visa_project] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [visa_project] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [visa_project] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [visa_project] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [visa_project] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [visa_project] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [visa_project] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [visa_project] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [visa_project] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [visa_project] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [visa_project] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [visa_project] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [visa_project] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [visa_project] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [visa_project] SET RECOVERY FULL 
+GO
+ALTER DATABASE [visa_project] SET  MULTI_USER 
+GO
+ALTER DATABASE [visa_project] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [visa_project] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [visa_project] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [visa_project] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [visa_project] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [visa_project] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'visa_project', N'ON'
+GO
+ALTER DATABASE [visa_project] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [visa_project] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [visa_project]
+GO
+/****** Object:  Table [dbo].[aspirante]    Script Date: 12/10/2023 10:24:54 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[aspirante](
+	[Documento] [varchar](45) NOT NULL,
+	[Tipo_doc] [varchar](50) NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+	[Apellido] [varchar](45) NOT NULL,
+	[Email] [varchar](60) NOT NULL,
+	[Nacionalidad] [varchar](45) NOT NULL,
+	[Edad] [int] NOT NULL,
+	[Pasaporte] [varchar](45) NOT NULL,
+	[Estado_soli] [varchar](45) NOT NULL,
+	[Id_visa] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Documento] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Entrevista]    Script Date: 12/10/2023 10:24:54 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Entrevista](
+	[Id_entrevista] [int] NOT NULL,
+	[Orden_pago] [int] NOT NULL,
+	[Id_canciller] [varchar](45) NOT NULL,
+	[Entrevista] [date] NOT NULL,
+	[Estado_requisitos] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id_entrevista] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[requisitos]    Script Date: 12/10/2023 10:24:54 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[requisitos](
+	[Id_requisitos] [int] NOT NULL,
+	[Estado_requisitos] [varchar](20) NOT NULL,
+	[observacion] [varchar](60) NOT NULL,
+	[Id_visa] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id_requisitos] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[visa]    Script Date: 12/10/2023 10:24:54 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[visa](
+	[Id_visa] [int] NOT NULL,
+	[Tipo_visa] [varchar](45) NOT NULL,
+	[fecha_exp] [date] NOT NULL,
+	[fecha_ven] [date] NOT NULL,
+	[estado] [varchar](30) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id_visa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[aspirante]  WITH CHECK ADD FOREIGN KEY([Id_visa])
+REFERENCES [dbo].[visa] ([Id_visa])
+GO
+ALTER TABLE [dbo].[Entrevista]  WITH CHECK ADD FOREIGN KEY([Estado_requisitos])
+REFERENCES [dbo].[requisitos] ([Id_requisitos])
+GO
+ALTER TABLE [dbo].[requisitos]  WITH CHECK ADD FOREIGN KEY([Id_visa])
+REFERENCES [dbo].[visa] ([Id_visa])
+GO
+USE [master]
+GO
+ALTER DATABASE [visa_project] SET  READ_WRITE 
+GO
