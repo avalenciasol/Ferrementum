@@ -1,0 +1,57 @@
+@import './global.css';
+
+.access-form {
+    margin-top: 10px;
+}
+
+.hd-access {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color-lbg);
+    text-align: left;
+}
+
+.acceso {
+    position: absolute;
+    top: 150px;
+    left: 33%;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.acceso .fields .input-field {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-color-lbg);
+}
+
+.btn-access {
+    height: 50px;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-lbg);
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1.05);
+    }
+}

@@ -1,0 +1,270 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1{ font-size: 5em;
+    color: rgba(26, 25, 25);
+}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 22px;
+    border-radius: 35px;
+    border: 2px solid rgb(0,0,0,0,5);
+    box-shadow: 2px 2px 10px rgb(0,0,0,0,5);
+    color: white;
+    background-color: rgb(228, 176, 109);  
+}
+
+button:hover{
+    background-color: rgb(228, 176, 109);
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.color-acento{ color:rgb(231, 154, 38) }
+
+header{
+    background-color: white;
+}
+
+header .logo{
+    margin: 0;  
+    padding: 25px 30px;
+    font-weight: bold;
+    color:black;
+    font-size: 1.7em;
+}
+
+
+
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#hero h1{
+    font-size: 5em;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{
+    color: rgb(233, 206, 156);
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70vh;
+    color: white;
+    background-image: url("img/artas.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+#somos-ferre .container{
+    text-align: center;
+    padding: 200px 12px;
+
+}
+
+#nuestros-programas{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-programas .container{
+    padding: 150px 12px;
+}
+
+#nuestros-programas h2{
+    margin-top: 0;
+    font-size: 3em;
+
+}
+
+#nuestros-programas p{
+    display: none;
+}
+
+#nuestros-programas .carta{
+    background-size: cover;
+    background-position: center center;
+    padding: 50px;
+    margin: 12px;
+    border-radius: 15px;
+
+}
+
+.carta:first-child{
+    background-image:url(img/maquinas-corte.jpg);
+}
+
+.carta:nth-child(2){
+    background-image:url(img/maderas.jpg);
+}
+
+.carta:nth-child(3){
+    background-image:url(img/pinturas.jpg);
+}
+
+#caracteristicas .container{
+    text-align: center;
+    padding: 67px 12px;
+
+}
+
+#caracteristicas li{
+    margin: 16px 0px;
+    font-weight: bold;
+}
+
+#Final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(235, 111, 9) !important;
+  border-color: rgba(235, 111, 9) !important;
+    height: 35vh;
+
+}
+
+#Final h2{
+    font-size: 2vw;
+}
+
+#Final button{
+    font-size: 1vw;
+}
+
+footer{
+    background-color: rgd(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+}
+
+#somos-ferre .container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#somos-ferre .Texto{
+    width: 50%;
+    max-width: 600px;
+    text-align: initial;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#somos-ferre h2{
+    margin-top: 0px;
+}
+
+#somos-ferre .img-container{
+    background-image:url(img/titulo.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 730px;
+}
+
+#nuestros-programas .programas{
+    display: flex;
+    justify-content: center;
+}
+
+#nuestros-programas p{
+    display: block;
+}
+
+#nuestros-programas h3{
+    margin-top: 0;
+}
+
+#nuestros-programas .carta{
+    padding: 15px;
+    background-size: 100% 150px;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-color: rgb(80,80,80);
+    box-shadow: 2px 2px 10px rgb(100,100,100);
+}
+

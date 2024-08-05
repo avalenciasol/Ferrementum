@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <body style="background-color:"blue">
+     
+    
+     
+     <div id="divTotal" class="divsNo">
+    <p><b><i><h1>Compras</h1></i></b></p>
+    <table id="tablaTotal"></table>
+    </div>
+   
+    <div id="todo" class="todoNo">
+    <div id="menu" class="menuNo">
+    
+    
+    <!--Producto del 1 al 9-->
+    <div id="div1" name="DIVS"></div>
+    <div id="div2" name="DIVS"></div>
+    <div id="div3" name="DIVS"></div>
+    <div id="div4" name="DIVS"></div>
+    <div id="div5" name="DIVS"></div>
+    <div id="div6" name="DIVS"></div>
+    <div id="div7" name="DIVS"></div>
+    <div id="div8" name="DIVS"></div>
+    <div id="div9" name="DIVS"></div>
+    
+    
+   
+    
+    
+    <!--zona de compra, tablas, formularios, etc.-->
+    <div id="divZonaCompra" class="divZonaCompraNo">
+    
+    
+    <!--Carrito de la compra-->
+    <!--<div id="divTotal" class="divsNo">
+    <p><b>Compras:</b></p>
+    <table id="tablaTotal"></table>
+    </div>-->
+    
+    
+    <!--Datos personales--> 
+    <form>
+    <table border="5">
+        <tr>
+    <div id="divDatos" class="divsNo">
+    <p><td rowspan="3"><b><h1>Introduzca sus datos personales</h1></b></p></td>
+    
+     <td><div id="divDatosPersonales0">
+      <div id="divDatosPersonales1">
+     <label>Nombre completo:</label>
+     <input type="text" id="nombre" value="" size="30" />
+    
+   <tr><td> <label>Cc:</label>
+    <input type="text" id="dni" value="" size="8" maxlength="9" />
+   
+    <tr><td><label>Fecha de nacimiento:</label><br/>
+   
+    <select id="fechaNacimientoDia">
+    <option value=""> dia </option>
+   <option value="">  1 </option>
+   <option value="">  2 </option>
+   <option value="">  3 </option>
+   <option value="">  4 </option>
+   <option value="">  5 </option>
+   <option value="">  6 </option>
+   <option value="">  7 </option>
+   <option value="">  8 </option>
+   <option value="">  9 </option>
+   <option value="">  10 </option>
+   <option value="">  11 </option>
+   <option value="">  12 </option>
+   <option value="">  13 </option>
+   <option value="">  14 </option>
+   <option value="">  15 </option>
+   <option value="">  16 </option>
+   <option value="">  17 </option>
+   <option value="">  18 </option>
+   <option value="">  19 </option>
+   <option value="">  20 </option>
+   <option value="">  21 </option>
+   <option value="">  22 </option>
+   <option value="">  23 </option>
+   <option value="">  24 </option>
+   <option value="">  25 </option>
+   <option value="">  26 </option>
+   <option value="">  27 </option>
+   <option value="">  28 </option>
+   <option value="">  29 </option>
+   <option value="">  30 </option>
+   <option value="">  31 </option>
+   </select>
+   
+    <select id="fechaNacimientoMes">
+    <option value="">      Mes</option>
+    <option value="1">Enero</option>
+    <option value="2">Febrero</option>
+    <option value="3">Marzo</option>
+    <option value="4">Abril</option>
+    <option value="5">Mayo</option>
+    <option value="6">Junio</option>
+    <option value="7">Julio</option>
+    <option value="8">Agosto</option>
+    <option value="9">Septiembre</option>
+    <option value="10">Octubre</option>
+    <option value="11">Noviembre</option>
+    <option value="12">Diciembre</option>
+     
+     <p> <input type="number" name="año"placeholder="año" required> </p>
+   
+   
+    </select> 
+    
+   
+    </select><br/>
+    </div>
+    
+    <div id="divDatosPersonales2">
+    <label>Telefono movil:</label><br/>
+    <input type="text" id="movil" value="" size="8" maxlength="9"/><br/>
+    
+    <label>Email:</label><br/>
+    <input type="text" id="email1" value="" size="25" /><br/>
+   </div>
+    
+    
+    <div id="divDomicilio">
+    <label>Tipo de via:</label>   
+    <select id="tipoDeVia">
+    <option value="Avenida">Avenida</option>
+    <option value="Calle"selected="selected">Calle</option>
+    <option value="Camino">Camino</option>
+    <option value="Carretera">Carretera</option>
+    <option value="Pasaje">Pasaje</option>
+    <option value="Plaza">Plaza</option>
+    <option value="Residencia">Residencia</option>
+    <option value="Ronda">Ronda</option>
+    <option value="Travesia">Travesia</option>
+    <option value="Urbanizacion">Urbanizacion</option>
+    </select>     
+    <br>
+    <label>Nombre via:</label>
+    <input type="text" id="viaNombre" value="" size="20" /><br/>
+    
+    <label>Localidad:</label>
+    <input type="text" id="localidad" value="" size="13"/>  
+    <label>Cuidad:</label>
+    <select id="Cuidad">
+    <option value="">        Bogota</option>
+    <option value="15">Armero</option>
+    <option value="1">Medellin</option>
+    <option value="2">Cali</option>
+    <option value="3">Santa Marta</option>
+    <option value="4">Cartagena</option>
+    <option value="33">Barranquilla</option>
+    <option value="5">Pasto</option>
+    <option value="6">Boyaca</option>
+    <option value="7">Bucaramanga</option>
+    <option value="8">Tunja</option>
+    <option value="9">Neiva</option>
+    <option value="10">Cauca</option>
+    <option value="11">Cucuta</option>
+    <option value="39">Zipaquira</option>
+    <option value="12">Sibate</option>
+    </td></tr>
+    </table>
+   </form>
+    </select>
+    </div> 
+    </div> 
+    
+    
+   
+    <!--Datos de pago-->
+   <form>
+   
+    <table Add class="highlight" to the table tag for a highlight table>
+        <tr>
+    <td><div id="divPago" class="divsNo"></td>
+    <p><td rowspan="3"><b><h3>Datos de su tarjeta de credito </h3></b></p></td>
+    
+    
+    <td><label>Titular de la tarjeta:</label><br/>
+    <input type="text" id="titular" value="" size="26" />
+    
+    
+    <div id="metodosDePago">
+    <label><span  id="alertTipoDeTarjeta">Tipo de tarjeta:</span></label><br/>
+    <label for="Alkosto">
+    <input type="radio" id="Alkosto" name="tarjetas" class="logoTarjetas" value="Alkosto">
+    <img src="img/images.jpg"width="100" height="100"></img>
+    </label>
+      
+       
+    <label for="amex">
+    <input type="radio" id="amex" name="tarjetas" class="logoTarjetas" value="American Express">
+    <img src="img/descarga.jpg"width="100" height="100"></img>
+    </label>
+      
+    <label for="BancoColombia">
+    <input type="radio" id="BancoColombia" name="tarjetas" class="logoTarjetas" value="BancoColombia">
+    <img src="img/descarga (1).jpg"width="100" height="100"></img>
+    </label>
+    </div>
+    
+    <br>
+    <div id="divNumeroTarjeta">
+    <label>Número tarjeta :</label><br/>
+    <input type="text" id="numeroTarjeta" value="" size="15" maxlength="16" />
+    <div id="divNumeroTarjeta">
+    <label>Ingrese su  CVC:</label><br/>
+    <input type="text" id="numeroTarjeta" value="" size="3" maxlength="3" />
+   <br/>
+    
+    
+   
+    <br>
+     <!--Botones de compra-->
+    <div id="divbotones">
+    <input type="button" id="botonTotal" value="Calcular total"/>
+    <input type="button" id="botonDatos" value="Datos personales" disabled="disabled"/>
+    <input type="button" id="botonPago" value="Pago" disabled="disabled"/>
+    <input type="button" id="botonConfirmar" value="Confirmar pedido" disabled="disabled"/></td></tr>
+    </div>
+    </div>
+    </div> 
+    </div>
+    </div> 
+    </div>
+     
+    </table>
+   </form>
+   
+    <!--<p class="pie">Imagen de fondo propiedad de <a href="http://www.appinformatica.com/" target="_black">appinformatica</a></p>
+    </body>-->
+    </center>
+   
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/starter-template/">
+
+    <title>AppAdmin | Inventario</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="front.html">Ferrementum</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Panel de control</a></li>
+            <li><a href="paginas.html">Paginas</a></li>
+            <li><a href="entradas.html">Entradas</a></li>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li class="active"><a href="inventario.html">Inventario</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <a href="index.html">
+          <div class="col-md-10">
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Panel de control <small> Inventario </small></h1>
+          </a>
+          </div>
+          <div class="col-md-2">
+              <div class="dropdown crear">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Crear Contenido
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a type="button" data-toggle="modal" data-target="#agregarPagina">Agregar pagina</a></li>
+                  <li><a href="#">Agregar Entrada</a></li>
+                  <li><a href="#">Agregar Usuarios</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--<section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active"> Panel de control</li>
+        </ol>
+      </div>
+    </section>-->
+    
+              <div class="panel-body">
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <center><th>Nombre del Producto</th>
+                    <th>Imagen del producto</th>
+                    <th>Descripción del producto</th>
+                    <th>Categoría del producto</th>
+                    <th>Precio</th>
+                    <th>Acción</th></center>
+                  </tr>
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="text" placeholder="Nombre del Producto"></td>
+                    <td><input type="file"></td>
+                    <td><input type="text" placeholder="Descripción del producto"></td>
+                    <td><select>
+                        <option>Selecione una categoría</option>
+                        <option>Electricas</option>
+                        <option>Manuales</option>
+                        <option>Pinturas</option>
+                        <option>Tornilleria</option>
+                    </select></td>
+                    <td><input type="number" placeholder="Precio"></td>
+                    <td>
+                      <button class="editar">Editar</button>
+                      <button class="eliminar">Eliminar</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </section>
+
+    <footer id="footer">
+      <p>Copyright AppAdmin, &copy;2024</p>
+    </footer>
+
+    
+    <!-- Modal -->
+<div class="modal fade" id="agregarInventario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <form>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Nombre del Producto</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Imagen del producto</label>
+            <input type="text" class="form-control" placeholder="Titulo de la pagina">
+          </div>
+
+          <div class="form-group">
+            <label>Descripción del producto</label>
+            <textarea name="editor1" class="form-control" placeholder="Informacion de la pagina"></textarea>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox">Publicado
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label>Categoría del producto</label>
+            <input type="text" class="form-control" placeholder="Agregar alguna palabras....">
+          </div>
+
+          <div class="form-group">
+            <label>Meta descripcion</label>
+            <input type="text" class="form-control" placeholder="Agregar alguna palabras....">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>    
+    
+
+    <script type="text/JavaScript">
+              // Always provide paths that start with a slash character ("/").
+        CKEDITOR.replace( 'editor1', {
+        } );
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

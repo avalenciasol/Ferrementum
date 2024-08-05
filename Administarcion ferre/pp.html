@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class triangulo  {
+            area (a,b){
+                document.write('la Altura del triangulo' + '<br>');
+                this.a=a;
+                this.b=b;
+                this.c=this.b*this.a/2;
+                console.log('El area del triangulo es de: ' +this.c )
+            }
+            base(){
+                document.write('la Base del triangulo');
+            }
+        }
+        let n1=parseInt(prompt('Digite la altura del triangulo'));
+        let n2=parseInt(prompt('Digite la base del triangulo'));
+        let triangulo1 = new triangulo();
+        triangulo1.area(n1,n2);
+        triangulo1.base();
+    </script>
+</body>
+</html>
