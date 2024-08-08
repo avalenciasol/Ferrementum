@@ -1,0 +1,33 @@
+/* src/components/Store.css */
+.store {
+    padding: 2rem 0;
+  }
+  
+  .item {
+    border: 2px solid #e27114;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .item-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .item-image {
+    height: 300px;
+    width: 100%;
+  }
+  
+  .item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px 15px;
+  }
+  
+  .item-details > .item-price {
+    margin: 0;
+  }
+  

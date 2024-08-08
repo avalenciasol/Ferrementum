@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
