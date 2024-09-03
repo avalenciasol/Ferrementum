@@ -1,47 +1,57 @@
 /* src/components/ShoppingCart.css */
 .shopping-cart {
-    padding: 2rem 0;
-  }
-  
-  .shopping-cart-header {
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .shopping-cart-items {
-    padding: 20px 0;
-  }
-  
-  .shopping-cart-image {
-    max-width: 80px;
-    border-radius: 20px;
-  }
-  
-  .shopping-cart-quantity-input {
-    max-width: 45px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #eee;
-    padding: 5px;
-  }
-  
-  .shopping-cart-total {
-    min-height: 96px;
-  }
-  
-  .shoppingCartItem {
-    border-bottom: 1px solid #e0e0e0;
-    padding: 1rem 0;
-  }
-  
-  .shoppingCartItemTitle {
+  background-color: #d8dedc;; /* Fondo claro */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin: 20px auto; /* Margen vertical y centrar */
+  max-width: 600px; /* Ancho máximo */
+}
+
+.shopping-cart h2 {
+  color: #333; /* Color del título */
+  font-size: 1.5em;
+  border-bottom: 2px solid #eb6f09; /* Línea inferior */
+  padding-bottom: 10px;
+}
+
+.shopping-cart .cart-items {
+  margin-top: 15px;
+}
+
+.shopping-cart .cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+.shopping-cart .cart-item:last-child {
+  border-bottom: none; /* Sin borde en el último item */
+}
+
+.shopping-cart .cart-item img {
+  max-width: 50px;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+  .comprarButton {
     font-weight: bold;
-  }
-  
-  .shoppingCartItemPrice {
-    color: #e27114;
-  }
-  
-  .shoppingCartItemQuantity {
-    text-align: center;
-  }
-  
+    display: block;
+    text-align:center;
+    margin: 0 auto;
+    background-color: rgba(235,111,9); 
+    box-shadow:2px 2px 10px rgb(0,0,0,0,5);
+    color: white; /* Texto en blanco */
+    font-size: 1.5em; /* Tamaño del texto */
+    padding: 5px 22px; /* Espaciado interno */
+    border: 2px solid rgb(0,0,0,0,5); /* Sin borde */
+    border-radius: 35px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Efecto de transición para cambios de color */
+}
+
+.comprarButton:hover {
+    background-color: rgba (228.176,109); 
+}

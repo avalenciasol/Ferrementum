@@ -1,16 +1,26 @@
+// src/components/Store.js
 import React, { useState, useEffect } from 'react';
 import './Store.css';
+import PurchaseForm from './PurchaseForm'; // Importa el formulario
 
 function Store({ addToCart }) {
   const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    // Fetch products from API
-    fetch('http://localhost:5000/api/products') // Cambia esta URL a la ruta de tu API
+    fetch('http://localhost:5000/api/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
   }, []);
+
+  const handleBuy = (product) => {
+    setSelectedProduct(product); // Mostrar el formulario
+  };
+
+  const handleCloseForm = () => {
+    setSelectedProduct(null); // Ocultar el formulario
+  };
 
   return (
     <section className="store">
@@ -26,7 +36,7 @@ function Store({ addToCart }) {
                     <h4 className="item-price">${product.price.toLocaleString()}</h4>
                     <button
                       className="item-button btn btn-primary"
-                      onClick={() => addToCart({ title: product.title, price: product.price })}
+                      onClick={() => handleBuy(product)}
                     >
                       AÑADIR AL CARRITO
                     </button>
@@ -37,6 +47,11 @@ function Store({ addToCart }) {
           </div>
         </div>
       </div>
+
+      {/* Mostrar formulario de compra si hay un producto seleccionado */}
+      {selectedProduct && (
+        <PurchaseForm product={selectedProduct} onClose={handleCloseForm} />
+      )}
     </section>
   );
 }

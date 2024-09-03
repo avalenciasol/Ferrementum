@@ -5,7 +5,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="bg-dark p-3 mt-5">
-      <p className="text-center m-0 text-muted">Ferrementum</p>
+      <p className="text-center m-0 text-muted">Gracias Por Tu Compra</p>
     </footer>
   );
 }

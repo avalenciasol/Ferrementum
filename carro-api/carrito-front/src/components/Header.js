@@ -6,7 +6,10 @@ function Header() {
   return (
     <header>
       <div className="container">
-        <h1 className="text-center">Herramientas</h1>
+        <div>
+        
+        <h1 className="text-center">Ferrementum</h1>
+        </div>
         <hr />
       </div>
     </header>
