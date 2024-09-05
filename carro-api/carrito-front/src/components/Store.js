@@ -1,7 +1,7 @@
 // src/components/Store.js
 import React, { useState, useEffect } from 'react';
 import './Store.css';
-import PurchaseForm from './PurchaseForm'; // Importa el formulario
+import PurchaseForm from './PurchaseForm';
 
 function Store({ addToCart }) {
   const [products, setProducts] = useState([]);
@@ -15,11 +15,11 @@ function Store({ addToCart }) {
   }, []);
 
   const handleBuy = (product) => {
-    setSelectedProduct(product); // Mostrar el formulario
+    setSelectedProduct(product);
   };
 
   const handleCloseForm = () => {
-    setSelectedProduct(null); // Ocultar el formulario
+    setSelectedProduct(null);
   };
 
   return (
@@ -30,10 +30,10 @@ function Store({ addToCart }) {
             {products.map((product, index) => (
               <div key={index} className="col-12 col-md-6">
                 <div className="item shadow mb-4">
-                  <h3 className="item-title">{product.title}</h3>
-                  <img className="item-image" src={product.image} alt={product.title} />
+                  <h3 className="item-title">{product.nombre}</h3>
+                  <img className="item-image" src={product.imagen} alt={product.nombre} />
                   <div className="item-details">
-                    <h4 className="item-price">${product.price.toLocaleString()}</h4>
+                    <h4 className="item-price">${product.precio.toLocaleString()}</h4>
                     <button
                       className="item-button btn btn-primary"
                       onClick={() => handleBuy(product)}
@@ -48,7 +48,6 @@ function Store({ addToCart }) {
         </div>
       </div>
 
-      {/* Mostrar formulario de compra si hay un producto seleccionado */}
       {selectedProduct && (
         <PurchaseForm product={selectedProduct} onClose={handleCloseForm} />
       )}

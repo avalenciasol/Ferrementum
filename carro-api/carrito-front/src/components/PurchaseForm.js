@@ -1,73 +1,89 @@
-// src/components/PurchaseForm.js
 import React, { useState } from 'react';
-import './PurchaseForm.css'; // Archivo CSS para el formulario
 
-function PurchaseForm({ product, onClose }) {
-  const [quantity, setQuantity] = useState(1);
-  const [address, setAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
+function PurchaseForm({ products, onClose }) {
+  // Estados para los campos de formulario
+  const [metodoPago, setMetodoPago] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [numSeg, setNumSeg] = useState('');
+  const usuarioId = 1; // Aquí podrías obtener el ID del usuario actual logueado
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const orderData = {
-      productId: product.id,
-      quantity,
-      address,
-      paymentMethod,
+  // Manejar la compra
+  const handlePurchase = () => {
+    // Crear el objeto del pedido que será enviado
+    const pedidoData = {
+      usuario_id: usuarioId,
+      fecha_pedido: new Date().toISOString(),
+      estado: 'pendiente',
+      num_seg: numSeg,
+      metodo_pago_id: metodoPago,
+      direccion_id: direccion,
+      productos: products.map(product => ({ id: product.id, cantidad: 1 })) // Mapeamos los productos
     };
 
-    try {
-      const response = await fetch('http://localhost:5000/api/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      alert('Order placed successfully!');
-      onClose(); // Close the form after submission
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    // Enviar la compra a la API
+    fetch('http://localhost:5000/api/pedido', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(pedidoData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert('Compra realizada con éxito');
+        onClose(); // Cerrar el formulario después de realizar la compra
+      })
+      .catch(error => console.error('Error en la compra:', error));
   };
 
   return (
     <div className="purchase-form">
-      <h2>Compra</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Cantidad:
-          <input
-            type="number"
-            min="1"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-          />
-        </label>
-        <label>
-          Dirección:
+      <h2>Formulario de Compra</h2>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <div>
+          <label htmlFor="metodoPago">Método de Pago:</label>
+          <select
+            id="metodoPago"
+            value={metodoPago}
+            onChange={(e) => setMetodoPago(e.target.value)}
+          >
+            <option value="">Selecciona un método de pago</option>
+            <option value="1">Tarjeta de Crédito</option>
+            <option value="2">PayPal</option>
+            {/* Aquí debes cargar los métodos de pago desde la base de datos */}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="direccion">Dirección:</label>
+          <select
+            id="direccion"
+            value={direccion}
+            onChange={(e) => setDireccion(e.target.value)}
+          >
+            <option value="">Selecciona una dirección</option>
+            <option value="1">Dirección 1</option>
+            <option value="2">Dirección 2</option>
+            {/* Aquí también puedes cargar las direcciones del usuario desde la base de datos */}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="numSeg">Número de Seguimiento (opcional):</label>
           <input
             type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            id="numSeg"
+            value={numSeg}
+            onChange={(e) => setNumSeg(e.target.value)}
           />
-        </label>
-        <label>
-          Método de Pago:
-          <input
-            type="text"
-            value={paymentMethod}
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          />
-        </label>
-        <button type="submit">Realizar Compra</button>
-        <button type="button" onClick={onClose}>Cancelar</button>
+        </div>
+
+        <button type="button" onClick={handlePurchase}>
+          Confirmar Compra
+        </button>
+        <button type="button" onClick={onClose}>
+          Cancelar
+        </button>
       </form>
     </div>
   );

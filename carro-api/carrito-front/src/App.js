@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom'; // Importar Route y Routes
 import Store from './components/Store';
 import ShoppingCart from './components/ShoppingCart';
+import PurchaseForm from './components/PurchaseForm'; // Importar PurchaseForm
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -14,8 +16,11 @@ function App() {
   return (
     <div>
       <Header />
-      <Store addToCart={addToCart} />
-      <ShoppingCart cart={cart} />
+      <Routes>
+        <Route path="/" element={<Store addToCart={addToCart} />} />
+        <Route path="/shopping-cart" element={<ShoppingCart cart={cart} />} />
+        <Route path="/purchase-form" element={<PurchaseForm />} />
+      </Routes>
       <Footer />
     </div>
   );

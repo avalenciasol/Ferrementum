@@ -8,7 +8,7 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
   port: 3306,
   ssl: {
-    rejectUnauthorized: true
+    rejectUnauthorized: false // Permitir certificados no verificados
   }
 });
 

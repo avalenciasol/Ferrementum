@@ -1,33 +1,42 @@
-import React from 'react';
-import './ShoppingCart.css';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ShoppingCart({ cart }) {
+  const [products, setProducts] = useState([]); // Estado para almacenar productos
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.price, 0).toFixed(2);
   };
 
   const handleBuy = () => {
-    // Aquí puedes enviar los datos del carrito a tu API
-    fetch('http://localhost:5000/api/checkout', { // Cambia esta URL a la ruta de tu API
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(cart),
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert('Compra realizada con éxito');
-      // Aquí puedes limpiar el carrito si lo deseas
-    })
-    .catch(error => console.error('Error during checkout:', error));
+    navigate('/purchase-form');
   };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/products'); // Asegúrate de que esta URL es correcta
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setProducts(data); // Guardar productos en el estado
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <section className="shopping-cart">
       <div className="container">
         <h1 className="text-center">CARRITO</h1>
         <hr />
+        {error && <p>Error: {error}</p>}
         <div className="row">
           <div className="col-6">
             <div className="shopping-cart-header">
