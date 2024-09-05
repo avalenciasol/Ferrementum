@@ -55,3 +55,12 @@
 .comprarButton:hover {
     background-color: rgba (228.176,109); 
 }
+.shopping-cart {
+  max-height: calc(100vh - 80px); /* Ajusta 80px según la altura de tu header y footer */
+  overflow-y: auto;
+}
+
+.shopping-cart-items {
+  max-height: 400px; /* Ajusta según sea necesario */
+  overflow-y: auto;
+}

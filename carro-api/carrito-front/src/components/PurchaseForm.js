@@ -21,7 +21,7 @@ function PurchaseForm({ products, onClose }) {
     };
 
     // Enviar la compra a la API
-    fetch('http://localhost:5000/api/pedido', {
+    fetch('http://localhost:5001/api/pedido', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
