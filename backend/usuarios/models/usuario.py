@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 class UsuarioAdmin(BaseUserManager):
-    def create_user(self, email, contrasena, **extra_fields):
+    def create_user(self, email, contrasena=None, **extra_fields):
         if not email:
             raise ValueError('El correo debe ser proporcionado')
         email = self.normalize_email(email)
@@ -19,17 +19,19 @@ class UsuarioAdmin(BaseUserManager):
 
     
 class Usuario(AbstractBaseUser, PermissionsMixin):
-    nombre = models.CharField(max_length=255, null=False)
+    doc = models.CharField(max_length=255, null=False, unique=True)
+    tipo_doc = models.CharField(max_length=20, null=False)
+    email = models.EmailField()
+    nombre= models.CharField(max_length=255, null=False)
     apellido = models.CharField(max_length=255, null=False)
-    tipo_doc = models.CharField(max_length=10, null=False)
-    doc = models.CharField(max_length=50, null=False)
-    email = models.EmailField(max_length=255,unique=True, null=False)
-    telefono = models.CharField(max_length=50, null=False)
+    telefono = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     objects = UsuarioAdmin()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['nombre', 'tipo_doc', 'doc', 'telefono']
+    REQUIRED_FIELDS = ['doc', 'tipo_doc', 'nombre', 'apellido', 'telefono']
 
     def __str__(self):
         return self.email
