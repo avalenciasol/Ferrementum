@@ -21,7 +21,7 @@ class UsuarioAdmin(BaseUserManager):
 class Usuario(AbstractBaseUser, PermissionsMixin):
     doc = models.CharField(max_length=255, null=False, unique=True)
     tipo_doc = models.CharField(max_length=20, null=False)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     nombre= models.CharField(max_length=255, null=False)
     apellido = models.CharField(max_length=255, null=False)
     telefono = models.CharField(max_length=100)
