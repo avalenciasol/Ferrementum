@@ -34,6 +34,9 @@ export default function Navbar() {
                             Iniciar Sesión
                         </NavLink>
                     )}
+                    <NavLink className="navbar-cart" to="/cart">
+                        <img alt="cart logo" src="../assets/cart.png"></img>
+                    </NavLink>
                     {isSmallScreen && (
                         <div className="menu-icon" onClick={() => setMenuVisible(!menuVisible)}>
                             <img alt="menu" src="../assets/menu.png"></img>
