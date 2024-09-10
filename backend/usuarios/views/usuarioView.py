@@ -5,7 +5,7 @@ from ..serializers import UsuarioSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import UpdateAPIView
 
-class Register(APIView):    
+class Register(APIView):
     def post(self, request):
         user_serializer = UsuarioSerializer(data=request.data)
         if user_serializer.is_valid():
@@ -17,8 +17,8 @@ class Perfil(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        usuario = request.usuario
-        serializer = UsuarioSerializer(usuario)
+        user = request.user
+        serializer = UsuarioSerializer(user)
         return Response(serializer.data)
     
 class EditarPerfil(UpdateAPIView):
@@ -26,11 +26,11 @@ class EditarPerfil(UpdateAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
-        return self.request.usuario
+        return self.request.user
     
 class Delete(APIView):
     permission_classes = [IsAuthenticated]
 
     def delete(self, request):
-        request.usuario.delete()
+        request.user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
