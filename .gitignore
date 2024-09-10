@@ -147,7 +147,7 @@ npm-debug.log*
 out/
 # Gatsby files
 .cache/
-public/
+#public/
 # Vue
 dist/
 # Expo / React Native
