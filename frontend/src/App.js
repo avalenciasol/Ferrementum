@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Register from "./components/register";
 import Access from "./components/access"
 import Profile from "./components/profile";
+// import Home from "./components/home";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Navbar />
         <div style={{ margin: 20 }}>
           <Routes>
+            {/* <Route path="/home" element={<Home />} /> */}
             <Route path="/register" element={<Register />} />
             <Route path="/access" element={<Access />} />
             <Route path="/profile" element={<Profile />} />
