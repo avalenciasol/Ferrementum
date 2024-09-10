@@ -8,14 +8,14 @@ class UsuarioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Usuario
-        fields = ('id', 'doc', 'tipo_doc', 'email', 'nombre', 'apellido','telefono', 'contrasena')
-        extra_kwargs = {'contrasena': {'write_only': True}}
+        fields = ('id', 'doc', 'tipo_doc', 'email', 'nombre', 'apellido','telefono', 'password')
+        extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        contrasena = validated_data.pop('contrasena', None)
+        password = validated_data.pop('password', None)
         usuario = super().create(validated_data)
-        if contrasena:
-            usuario.set_password(contrasena)
+        if password:
+            usuario.set_password(password)
             usuario.save()
         return usuario
     
@@ -24,9 +24,9 @@ class UsuarioSerializer(serializers.ModelSerializer):
         instance.apellido = validated_data.get('apellido', instance.apellido)
         instance.telefono = validated_data.get('telefono', instance.telefono)
 
-        contrasena = validated_data.get('contrasena')
-        if contrasena: 
-            instance.set_password(contrasena)
+        password = validated_data.get('password')
+        if password: 
+            instance.set_password(password)
 
         instance.save()
         return instance
