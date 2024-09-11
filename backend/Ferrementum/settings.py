@@ -184,5 +184,3 @@ try:
     from .local_settings import *
 except ImportError as e:
     raise ImportError("No se pudo importar local_settings.py") from e
-
-
