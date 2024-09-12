@@ -23,12 +23,22 @@ const Home = () => {
             {/*======End Preloader =====*/}
 
             {/*======Start Banner =====*/}
-            <section className="banner">
-                <div className="banner-content">
-                    <img src="../assets/images/Banner1.png" alt="banner" className="banner-image" />     
-                    {/* <h1>Bienvenido a Nuestra Tienda</h1>
-                    <p>Encuentra todo lo que necesitas aquí</p>
-                    <button>Explorar</button> */}
+            <section className="banner-area">
+                <div className="banner-wrapper-one">    
+                    <div className="banner-container">
+                        <div className="row">
+                            <div className="col-lg-8">
+                                <div className="banner-content">
+                                    <h1 className="fadeInUp blanco" style={{ animationDelay: "30ms" }}>
+                                        Expertos en<br />tener lo que<br />necesitas
+                                    </h1>
+                                    <h3 className="fadeInDown blanco" style={{ animationDelay: "50ms" }}> 
+                                        Para ti, tu casa, el trabajo ...
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             {/*======End Banner =====*/}

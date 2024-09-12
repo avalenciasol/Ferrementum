@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import {  Route, Routes, Navigate } from "react-router-dom";
 
 import Navbar from "./components/navbar";
 import Register from "./components/register";
@@ -13,6 +13,7 @@ const App = () => {
         <Navbar />
         <div style={{ margin: 20 }}>
           <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/access" element={<Access />} />
