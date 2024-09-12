@@ -8,7 +8,7 @@ function Store({ addToCart }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/products')
+    fetch('http://127.0.0.1:8000/api/productos/')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
