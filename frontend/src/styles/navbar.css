@@ -2,12 +2,14 @@
 
 .navbar {
     display: flex;
+    justify-content: center;
     top: 0;
     left: 0;
     height: 107px;
-    max-width: 100%;
-    width: 1800px;
-    padding: 0 20px;
+    /* max-width: 100%;
+    min-width: 1395px; */
+    width: 100%;
+    padding: 0 2%;
     position: absolute;
     align-items: center;
     background-color: var(--secondary-color);
@@ -31,18 +33,31 @@
     font-size: 30px;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0 100px 0 0;
+    margin: 0 5% 0 0;
 }
+
+/* .navbar-logoType {
+    padding: 0;
+    display: flex;
+    max-width: fit-content;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    flex-shrink: 1;
+} */
 
 .search-bar {
     display: flex;
+    max-width: fit-content;
     align-items: center;
-    margin: 0 100px;
+    margin: 0 5%;
 }
 
 .search-bar input {
     height: 40px;
-    min-width: 360px;
+    width: 100%;
+    min-width: 250px;
     padding: 0 10px;
     border: 1px solid #b8b8b8;
     border-radius: 8px;
@@ -73,6 +88,7 @@
 
 .buttons {
     display: flex;
+    max-width: 15%;
     align-items: center;
     gap: 20px;
     margin: 0 20px 0 100px;
@@ -81,7 +97,7 @@
 .link-acceso {
     text-transform: uppercase;
     color: var(--text-color-lbg);
-    font-size: 18px;
+    font-size: large;
     font-weight: 600;
     &:hover {
         color: var(--primary-color);

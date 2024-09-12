@@ -67,6 +67,8 @@ form, button, input, textarea, select {
 }
 
 body {
+    display: flex;
+    justify-content: center;
     font-family: var(--title-font);
     font-size: 100%;
     font-weight: 400;

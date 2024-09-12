@@ -14,11 +14,11 @@ export default function Navbar() {
     return (
         <div>
             <nav className="navbar">
-                <NavLink className="navbar-logo" to="/home">
-                    <img alt="Ferrementum logo" src="../assets/logo.png" className="logo"></img>
-                </NavLink>
-                <div className="page-name">
-                    <h1>Ferrementum</h1>
+                    <NavLink className="navbar-logo" to="/home">
+                        <img alt="Ferrementum logo" src="../assets/images/logo.png" className="logo"></img>
+                    </NavLink>
+                    <div className="page-name">
+                        <h1>Ferrementum</h1>
                 </div>
                 <div className="search-bar">
                     <input type="text" placeholder="Buscar productos, marcas y más..." />
@@ -27,7 +27,7 @@ export default function Navbar() {
                 <div className="buttons">
                     {isLoggedIn ? (
                         <NavLink className="link-acceso" to="/profile">
-                            <img alt="profile logo" src="../assets/profile.png"></img>
+                            <img alt="profile logo" src="../assets/images/profile.png"></img>
                         </NavLink>
                     ) : (
                         <NavLink className="link-acceso" to="/access">
@@ -35,11 +35,11 @@ export default function Navbar() {
                         </NavLink>
                     )}
                     <NavLink className="navbar-cart" to="/cart">
-                        <img alt="cart logo" src="../assets/cart.png"></img>
+                        <img alt="cart logo" src="../assets/images/cart.png"></img>
                     </NavLink>
                     {isSmallScreen && (
                         <div className="menu-icon" onClick={() => setMenuVisible(!menuVisible)}>
-                            <img alt="menu" src="../assets/menu.png"></img>
+                            <img alt="menu" src="../assets/images/menu.png"></img>
                         </div>
                     )}
                 </div>
