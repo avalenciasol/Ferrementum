@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function ShoppingCart({ cart }) {
+function ShoppingCart() {
   const [products, setProducts] = useState([]); // Estado para almacenar productos
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const calculateTotal = () => {
-    return cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+    return products.reduce((total, product) => total + product.precio, 0).toFixed(2);
   };
 
   const handleBuy = () => {
@@ -55,17 +55,17 @@ function ShoppingCart({ cart }) {
           </div>
         </div>
         <div className="shopping-cart-items">
-          {cart.map((item, index) => (
+          {products.map((product, index) => (
             <div key={index} className="shoppingCartItem">
               <div className="row">
                 <div className="col-6">
-                  <p className="shoppingCartItemTitle">{item.title}</p>
+                  <p className="shoppingCartItemTitle">{product.nombre}</p>
                 </div>
                 <div className="col-2">
-                  <p className="shoppingCartItemPrice">${item.price}</p>
+                  <p className="shoppingCartItemPrice">${product.precio}</p>
                 </div>
                 <div className="col-4">
-                  <p className="shoppingCartItemQuantity">1</p>
+                  <p className="shoppingCartItemQuantity">{product.cantidad}</p>
                 </div>
               </div>
             </div>
