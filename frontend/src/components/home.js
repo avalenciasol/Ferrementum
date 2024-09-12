@@ -1,12 +1,5 @@
 import React from "react";
-import "../styles/homepage/animate.css";
-import "../styles/homepage/bootstrap.min.css";
-import "../styles/homepage/default.css";
-import "../styles/homepage/jquery-ui.min.css";
-import "../styles/homepage/magnific-popup.css";
-import "../styles/homepage/nice-select.css";
-import "../styles/homepage/slick.css";
-import "../styles/homepage/style.css";
+import "../styles/home.css";
 
 
 const Home = () => {
