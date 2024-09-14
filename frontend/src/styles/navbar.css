@@ -112,7 +112,7 @@
     display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     .menu-icon {
         display: block;
     }

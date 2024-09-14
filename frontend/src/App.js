@@ -11,7 +11,7 @@ const App = () => {
   return (
       <div>
         <Navbar />
-        <div style={{ margin: 20 }}>
+        <div style={{ margin: 0 }}>
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />

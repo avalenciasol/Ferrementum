@@ -1,0 +1,4 @@
+En esta carpeta se encuentran todos los archivos de media necesarios para la visualización de la app web
+    svg: archivos de tipo .svg 
+    Banner: Las imagenes usadas en el Banner
+    Productos: Imagenes de los productos
