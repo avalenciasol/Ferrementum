@@ -39,16 +39,10 @@ section {
     justify-content: center;
     align-items: center; }
     .preloader .loader {
-      /* margin: 0 auto;
-      position: relative;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%); */
       text-align: center;
       z-index: 9999;
-      -webkit-animation: loadershake infinite .8s linear;
-      animation: loadershake infinite .8s linear; }
+      -webkit-animation: loadershake .8s .8s linear;
+      animation: loadershake .8s .8s linear; }
   
   @-webkit-keyframes loadershake {
     0% {

@@ -20,6 +20,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         return user
     
     def update(self, instance, validated_data):
+        instance.email = validated_data.get('email', instance.email)
         instance.nombre = validated_data.get('nombre', instance.nombre)
         instance.apellido = validated_data.get('apellido', instance.apellido)
         instance.telefono = validated_data.get('telefono', instance.telefono)

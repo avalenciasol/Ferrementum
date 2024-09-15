@@ -1,11 +1,14 @@
+
 import React from "react";
 import {  Route, Routes, Navigate } from "react-router-dom";
 
 import Navbar from "./components/navbar";
+import Home from "./components/home";
 import Register from "./components/register";
 import Access from "./components/access"
 import Profile from "./components/profile";
-import Home from "./components/home";
+import EditProfile from "./components/editProfile";
+
 
 const App = () => {
   return (
@@ -18,7 +21,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/access" element={<Access />} />
             <Route path="/profile" element={<Profile />} />
-            {/* <Route path="/editProfile" element={<EditProfile />} />  */}
+            <Route path="/editProfile" element={<EditProfile />} />
           </Routes>
         </div>
       </div>

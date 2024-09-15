@@ -21,12 +21,23 @@ class Perfil(APIView):
         serializer = UsuarioSerializer(user)
         return Response(serializer.data)
     
-class EditarPerfil(UpdateAPIView):
-    serializer_class = UsuarioSerializer
+class EditarPerfil(APIView):
     permission_classes = [IsAuthenticated]
 
-    def get_object(self):
-        return self.request.user
+    def put(self, request):
+        user = request.user
+        serializer = UsuarioSerializer(user, data=request.data, partial=True)  
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                'nombre': user.nombre,
+                'appellido': user.apellido,
+                'email': user.email,
+                'telefono': user.telefono,
+                'message': 'Perfil actualizado exitosamente',
+            }, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class Delete(APIView):
     permission_classes = [IsAuthenticated]

@@ -9,7 +9,6 @@ import BackToTop from "./extra/BackToTop";
 const Home = () => {
 
     useEffect(() => {
-        // Código para el preloader
         $(window).on('load', function(event) {
             $('.preloader').delay(500).fadeOut('500');
         });
@@ -225,7 +224,7 @@ const Home = () => {
 
             </section>
 
-            {/* <!--====== Start Sales Section ======--> */}
+            {/* <!--====== End Sales Section ======--> */}
             <BackToTop />
         </div>
     );
