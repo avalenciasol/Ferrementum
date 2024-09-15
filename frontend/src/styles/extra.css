@@ -1,0 +1,27 @@
+.back-to-top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #161316;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0px;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.back-to-top-btn {
+    opacity:1;
+}
+
+.back-to-top-button .material-icons {
+    font-size: 24px;
+    color: white;
+  }

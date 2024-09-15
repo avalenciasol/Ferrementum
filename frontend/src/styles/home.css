@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+
 @import './global.css';
 
 section {
@@ -16,6 +18,10 @@ section {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 /* Start Preloader css */
@@ -135,7 +141,7 @@ section {
   margin-bottom: 22px; 
   font-size:  90px;
   line-height: 90px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .banner-wrapper-one .banner-content h3 {
@@ -259,10 +265,6 @@ section {
   transition: all 0.3s ease-out 0s;
 }
 
-.text-center {
-  text-align: center !important;
-}
-
 .category-icon img {
   max-width: 68px;
   width: 68px;
@@ -327,3 +329,249 @@ section {
 }
 
 /* End Category CSS */
+
+/* Start Sales CSS */
+
+.pb-75 {
+  padding-bottom: 75px;
+}
+
+.pt-115 {
+  padding-top: 115px;
+}
+
+.sales-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .sales-container {
+      max-width: 1200px;
+  }
+}
+
+.justify-content-center {
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+@media (min-width: 992px) {
+  .col-lg-8 {
+      -ms-flex: 0 0 66.666667%;
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+}
+
+.col-lg-8 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.mb-75 {
+  margin-bottom: 75px;
+}
+
+.sales-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.section-title span.sub-title {
+    margin-bottom: 17px;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    color: #FF7C0A;
+}
+
+.section-title h2 {
+  font-size: 48px;
+  line-height: 55px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.col-lg-4, .col-md-6, .col-sm-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+}
+
+.mb-45 {
+  margin-bottom: 45px;
+}
+
+.sales-grid-one {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(36, 37, 51, 0.08);
+  box-shadow: 0px 0px 10px 0px rgba(36, 37, 51, 0.08);
+  border-radius: 16px;
+}
+
+.sales-item .sales-thumbnail {
+  position: relative;
+}
+
+.sales-grid-one .sales-thumbnail img {
+  border-radius: 16px 16px 0px 0px;
+  vertical-align: middle;
+  border-style: none;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.sales-thumbnail span {
+  display: inline-block;
+}
+
+.sale-btn {
+  color:#fff;
+  background-color: #FF7C0A;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+.sales-grid-one .sales-thumbnail .sale-btn {
+  position: absolute;
+  top: -15px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.justify-content-between {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.sales-grid-one .sales-thumbnail .thumbnail-product {
+  background-color: var(--accent-color);
+  padding: 8px 30px 8px 20px;
+  width: 80%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 98% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 0% 100%);
+  margin-top: -38px;
+}
+
+.marca h6 {
+  font-size: 16px;
+  color:#FF7C0A;
+  line-height: 1.2;
+}
+
+span.dispo {
+  padding: 5px 10px;
+  float: right;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 13px;
+}
+
+span.dispo.in-stock {
+  color:#35c54c;
+}
+
+span.dispo.low-stock {
+  color:#dd2727;
+}
+
+.sales-grid-one .sales-content {
+  border-radius: 0px 0px 16px 16px;
+  background-color: #fff;
+  padding: 22px 30px 23px;
+}
+
+
+h3.title {
+  color: var(--text-color-lbg);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.sales-grid-one
+.sales-content h3.title {
+  margin-bottom: 5px;
+}
+
+.sales-content a {
+  display: inline-block;
+}
+
+.sales-content a:hover {
+  color:#FF7C0A;
+}
+
+.sales-grid-one .sales-content span.product-price {
+  display: block;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 15px;
+}
+
+.product-price s {
+  margin-right: 10px;
+}
+
+.sales-grid-one .sales-content .sales-meta {
+  padding-top: 15px;
+  border-top: 1px solid #dfdfdf;
+}
+
+.sales-grid-one .sales-content .sales-meta ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.sales-grid-one .sales-content .sales-meta ul span {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.sales-grid-one .sales-content .sales-meta i {
+  margin-right: 10px;
+  color: var(--text-color-lbg);
+}
+
+/* End Sales CSS */
