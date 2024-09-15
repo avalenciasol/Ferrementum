@@ -4,7 +4,7 @@ from rest_framework import serializers
 User = get_user_model()
 
 class UsuarioSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
+    password = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
         model = User
@@ -21,13 +21,12 @@ class UsuarioSerializer(serializers.ModelSerializer):
     
     def update(self, instance, validated_data):
         instance.email = validated_data.get('email', instance.email)
-        instance.nombre = validated_data.get('nombre', instance.nombre)
-        instance.apellido = validated_data.get('apellido', instance.apellido)
         instance.telefono = validated_data.get('telefono', instance.telefono)
 
-        password = validated_data.get('password')
+        password = validated_data.get('password', None)
         if password:
             instance.set_password(password)
 
         instance.save()
         return instance
+    

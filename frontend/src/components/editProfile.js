@@ -25,6 +25,12 @@ const EditProfile = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
+        const filteredData = {};
+        Object.keys(newUserData).forEach(key => {
+            if (newUserData[key]) {
+            filteredData[key] = newUserData[key];
+            }
+        });
 
         console.log("Token: ", token)
         console.log("User Data: ", newUserData)
@@ -36,7 +42,7 @@ const EditProfile = () => {
                     'Content-Type':'application/json',
                     'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify(newUserData),
+                body: JSON.stringify(filteredData),
             });
             console.log("Token: ", token)
             console.log("Response: ",response)
@@ -61,7 +67,7 @@ const EditProfile = () => {
                             Correo:
                             <input
                                 type="text"
-                                placeholder="Ingresa tu correo"
+                                placeholder="Ingresa tu nuevo correo"
                                 id="email"
                                 name="email"
                                 value={newUserData.email}
@@ -74,7 +80,7 @@ const EditProfile = () => {
                             Teléfono:
                             <input
                                 type="text"
-                                placeholder="Ingresa tu número de telefono"
+                                placeholder="Ingresa tu nuevo número de telefono"
                                 id="phone"
                                 name="phone"
                                 value={newUserData.telefono}
@@ -87,7 +93,7 @@ const EditProfile = () => {
                             Contraseña:
                             <input
                                 type="password"
-                                placeholder="Ingresa tu contraseña"
+                                placeholder="Ingresa tu nueva contraseña"
                                 id="password"
                                 name="password"
                                 value={newUserData.password}

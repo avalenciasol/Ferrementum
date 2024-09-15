@@ -26,18 +26,18 @@ class EditarPerfil(APIView):
 
     def put(self, request):
         user = request.user
-        serializer = UsuarioSerializer(user, data=request.data, partial=True)  
+        serializer = UsuarioSerializer(user, data=request.data, partial=True)
+        
         if serializer.is_valid():
-            serializer.save()
+            serializer.save()            
             return Response({
-                'nombre': user.nombre,
-                'appellido': user.apellido,
                 'email': user.email,
                 'telefono': user.telefono,
                 'message': 'Perfil actualizado exitosamente',
             }, status=status.HTTP_200_OK)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            print("Validation errors:", serializer.errors)  
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class Delete(APIView):
     permission_classes = [IsAuthenticated]
