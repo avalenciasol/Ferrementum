@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
+import React from "react";
 
-// import "./extra/slick.min.js"
+
 import "../styles/home.css";
 import BackToTop from "./extra/BackToTop";
+import PreloaderComponent from "./extra/preloader";
 
 
 const Home = () => {
 
-    useEffect(() => {
-        $(window).on('load', function(event) {
-            $('.preloader').delay(500).fadeOut('500');
-        });
-    }, []);
-
     return (
         <div>
             {/*======Start Preloader =====*/}
+            <PreloaderComponent />
             <div className="preloader">
                 <div className="loader">
                     <img src="../assets/images/loader.png" alt="loader"></img>
