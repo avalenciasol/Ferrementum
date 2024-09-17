@@ -8,6 +8,7 @@ import Register from "./components/register";
 import Access from "./components/access"
 import Profile from "./components/profile";
 import EditProfile from "./components/editProfile";
+// import CategoriesGrid from "./components/categories";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/access" element={<Access />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/editProfile" element={<EditProfile />} />
+            {/* <Route path="/categories-grid" element={<CategoriesGrid/>} /> */}
           </Routes>
         </div>
       </div>

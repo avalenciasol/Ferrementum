@@ -50,7 +50,7 @@ const Home = () => {
                                             <img src="../assets/images/category/electricas.png" height="68" alt="herramientas Electrícas"></img>
                                             <h6>Herramientas</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const Home = () => {
                                             <img src="../assets/images/category/manuales.png" height="68" alt="herramientas Manuales"></img>
                                             <h6>Accesorios</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ const Home = () => {
                                             <img src="../assets/images/category/kits.png" height="68" alt="Kits de Herramientas"></img>
                                             <h6>Kits</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ const Home = () => {
                                             <img src="../assets/images/category/pintura.png" height="68" alt="Pinturería"></img>
                                             <h6>Pinturería</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ const Home = () => {
                                             <img src="../assets/images/category/plomeria.png" height="68" alt="Plomería"></img>
                                             <h6>Plomería</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ const Home = () => {
                                             <img src="../assets/images/category/carpinteria.png" height="68" alt="Carpintería"></img>
                                             <h6>Carpintería</h6>
                                         </div>
-                                        <a href="/home" class="category-btn">Ver Productos</a>
+                                        <a href="/categories-grid" class="category-btn">Ver Productos</a>
                                     </div>
                                 </div>
                             </div>
