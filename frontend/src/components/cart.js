@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../styles/cart.css';
 
 const Cart = () => {
@@ -52,6 +53,12 @@ const Cart = () => {
 
   const totalAmount = cartItems.reduce((acc, item) => acc + item.precio * item.cant, 0);
 
+  const navigate = useNavigate();
+  const handlePurchase = () => {
+    alert("Orden creada exitosamente");
+    navigate('/home');
+  };
+
   return (
     <section className='cart-area'>
       <div className='cart-wrapper-one'>
@@ -87,7 +94,7 @@ const Cart = () => {
                 <p>Compra = {totalAmount.toFixed(3)} COP</p>
                 <p>Envío = 7.000 COP</p>
                 <h4>Total = {(totalAmount ? (totalAmount + 7.000 ).toFixed(3) : '0')} COP</h4>
-                <button className='orden-btn'>Comprar</button>
+                <button className='orden-btn' onClick={handlePurchase}>Comprar</button>
               </div>
             </div>
         </div>
