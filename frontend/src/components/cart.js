@@ -1,91 +1,99 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import '../styles/cart.css';
 
-import "../styles/cart.css";
+const Cart = () => {
 
-function ShoppingCart() {
-  const [products, setProducts] = useState([]); // Estado para almacenar productos
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      producto: "Lijadora Orbital",
+      marca: "BauKer",
+      precio: 159.920,
+      cant: 1,
+      imagen: "../../assets/images/products/lijadora-orbital.png"
+    },
+    {
+      id: 2,
+      producto: 'Lijadora Orbital',
+      marca: 'BauKer',
+      precio: 159.900,
+      cant: 1,
+      imagen: "../../assets/images/products/lijadora-orbital.png"
+    },
+    {
+      id: 3,
+      producto: "Lijadora Orbital",
+      marca: "BauKer",
+      precio: 159.920,
+      cant: 1,
+      imagen: "../../assets/images/products/lijadora-orbital.png"
+    } 
+  ])
 
-  const calculateTotal = () => {
-    return products.reduce((total, product) => total + product.precio, 0).toFixed(2);
+  const incrementarCant = (id) => {
+    setCartItems(
+      cartItems.map((item) =>
+      item.id === id ? {...item, cant: item.cant + 1}: item
+      )
+    );
   };
 
-  const handleBuy = () => {
-    navigate('/purchase-form');
+  const decrementCant = (id) => {
+    setCartItems(
+      cartItems.map((item) => 
+      item.id === id && item.cant > 1 ? {...item, cant: item.cant - 1 }: item
+      )
+    );
   };
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:8000/carrito/<int:item_id>/'); // Asegúrate de que esta URL es correcta
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setProducts(data); // Guardar productos en el estado
-      } catch (error) {
-        setError(error.message);
-      }
-    };
+  const removeItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
 
-    fetchProducts();
-  }, []);
+  const cartItem = ({ item, incrementarCant, decrementCant, removeItem });
+
+  const totalAmount = cartItems.reduce((acc, item) => acc + item.precio * item.cant, 0);
+
+  const resumenPago = ({ totalAmount });
 
   return (
-    <section className="shopping-cart">
-      <div className="cart-container">
-        <h1 className="text-center">CARRITO</h1>
-        <hr />
-        {error && <p>Error: {error}</p>}
-        <div className="cart-row">
-          <div className="col-6">
-            <div className="shopping-cart-header">
-              <h6>Producto</h6>
-            </div>
-          </div>
-          <div className="col-2">
-            <div className="shopping-cart-header">
-              <h6 className="text-truncate">Precio</h6>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="shopping-cart-header">
-              <h6>Cantidad</h6>
-            </div>
-          </div>
-        </div>
-        <div className="shopping-cart-items">
-          {products.map((product, index) => (
-            <div key={index} className="shoppingCartItem">
-              <div className="cart-row">
-                <div className="col-6">
-                  <p className="shoppingCartItemTitle">{product.nombre}</p>
-                </div>
-                <div className="col-2">
-                  <p className="shoppingCartItemPrice">${product.precio}</p>
-                </div>
-                <div className="col-4">
-                  <p className="shoppingCartItemQuantity">{product.cantidad}</p>
-                </div>
+    <div className='cart-container'>
+      <div className='cart-left'>
+        <div className='cart-items'>
+          <h3>Mi carrito ({cartItems.length})</h3>
+          <div className='cart-item'>
+            <img src={item.imagen} alt={item.producto} className='item-image'></img>
+            <div className='item-details'>
+              <h4>{item.producto}</h4>
+              <p>${item.price.toFixed(2)}</p>
+              <div className='item-actions'>
+                <button onClick={() => decrementCant(item.id)}>-</button>
+                <span>{item.cant}</span>
+                <button onClick={() => incrementarCant(item.id)}>+</button>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="cart-row">
-          <div className="col-12">
-            <div className="shopping-cart-total  align-items-center">
-              <span className="mb-0">Total <p className="ml-4 mb-0 shoppingCartTotal">${calculateTotal()}</p></span>
-              <button className="btn btn-success ml-auto comprarButton" type="button" onClick={handleBuy}>
-                Comprar
-              </button>
+              <button className="remove-btn" onClick={() => removeItem(item.id)}>Eliminar</button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div className='cart-right'>
+        <div className='direccion'>
+          <h4>Dirección de Envío</h4>
+          <p>Kr 96 C # 22 H - 30</p>
+          <button>Cambiar</button>
+        </div>
+        <div className='resumen-pago'>
+          <h4>Resumen de Pago</h4>
+          <p>Compra: ${totalAmount.toFixed(2)}</p>
+          <p>Envío: 7,000</p>
+          <h4>Total: ${(totalAmount - 7000).toFixed(2)}</h4>
+          <button className='orden-btn'>Comprar</button>
+        </div>
+      </div>
+    </div>
   );
-}
 
-export default ShoppingCart;
+};
+
+
+export default Cart;
