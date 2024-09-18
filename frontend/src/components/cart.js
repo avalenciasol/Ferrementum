@@ -50,46 +50,44 @@ const Cart = () => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  const cartItem = ({ item, incrementarCant, decrementCant, removeItem });
-
   const totalAmount = cartItems.reduce((acc, item) => acc + item.precio * item.cant, 0);
-
-  const resumenPago = ({ totalAmount });
 
   return (
     <div className='cart-container'>
       <div className='cart-left'>
         <div className='cart-items'>
           <h3>Mi carrito ({cartItems.length})</h3>
-          <div className='cart-item'>
-            <img src={item.imagen} alt={item.producto} className='item-image'></img>
-            <div className='item-details'>
-              <h4>{item.producto}</h4>
-              <p>${item.price.toFixed(2)}</p>
-              <div className='item-actions'>
-                <button onClick={() => decrementCant(item.id)}>-</button>
-                <span>{item.cant}</span>
-                <button onClick={() => incrementarCant(item.id)}>+</button>
+          {cartItems.map((item) => (
+            <div className='cart-item'>
+              <img src={item.imagen} alt={item.producto} className='item-image'></img>
+              <div className='item-details'>
+                <h4>{item.producto}</h4>
+                <p>${(item.precio ? (item.precio * item.cant).toFixed(3) : '0')}</p>
+                <div className='item-actions'>
+                  <button onClick={() => decrementCant(item.id)}>-</button>
+                  <span>{item.cant}</span>
+                  <button onClick={() => incrementarCant(item.id)}>+</button>
+                </div>
+                <button className="remove-btn" onClick={() => removeItem(item.id)}>Eliminar</button>
               </div>
-              <button className="remove-btn" onClick={() => removeItem(item.id)}>Eliminar</button>
             </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className='cart-right'>
-        <div className='direccion'>
-          <h4>Dirección de Envío</h4>
-          <p>Kr 96 C # 22 H - 30</p>
-          <button>Cambiar</button>
+        <div className='cart-right'>
+          <div className='direccion'>
+            <h4>Dirección de Envío</h4>
+            <p>Kr 96 C # 22 H - 30</p>
+            <button>Cambiar</button>
+          </div>
+          <div className='resumen-pago'>
+            <h4>Resumen de Pago</h4>
+            <p>Compra: ${totalAmount.toFixed(2)}</p>
+            <p>Envío: 7,000</p>
+            <h4>Total: ${(totalAmount ? (totalAmount - 7000).toFixed(3) : '0')}</h4>
+            <button className='orden-btn'>Comprar</button>
+          </div>
         </div>
-        <div className='resumen-pago'>
-          <h4>Resumen de Pago</h4>
-          <p>Compra: ${totalAmount.toFixed(2)}</p>
-          <p>Envío: 7,000</p>
-          <h4>Total: ${(totalAmount - 7000).toFixed(2)}</h4>
-          <button className='orden-btn'>Comprar</button>
-        </div>
-      </div>
     </div>
   );
 
