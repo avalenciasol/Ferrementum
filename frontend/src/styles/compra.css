@@ -1,0 +1,29 @@
+/* src/components/PurchaseForm.css */
+.purchase-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .purchase-form h2 {
+    margin-top: 0;
+  }
+  
+  .purchase-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .purchase-form label {
+    margin-bottom: 10px;
+  }
+  
+  .purchase-form button {
+    margin-top: 10px;
+  }
+  
