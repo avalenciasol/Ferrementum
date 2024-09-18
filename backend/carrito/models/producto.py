@@ -9,3 +9,6 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    class Meta:
+        app_label = 'carrito'

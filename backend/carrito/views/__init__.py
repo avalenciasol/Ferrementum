@@ -1,2 +1,2 @@
-from productoView import ProductoLista
-from carritoView import CarritoView
+from .productoView import ProductoLista
+from .carritoView import CarritoView

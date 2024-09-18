@@ -8,6 +8,7 @@ import Register from "./components/register";
 import Access from "./components/access"
 import Profile from "./components/profile";
 import EditProfile from "./components/editProfile";
+import ShoppingCart from "./components/cart";
 // import CategoriesGrid from "./components/categories";
 
 
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/access" element={<Access />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/editProfile" element={<EditProfile />} />
+            <Route path="/cart" element={<ShoppingCart />} />
             {/* <Route path="/categories-grid" element={<CategoriesGrid/>} /> */}
           </Routes>
         </div>
