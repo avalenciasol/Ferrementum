@@ -69,12 +69,14 @@ const AdminDashboard = () => {
         setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
       };
 
+      
     return (
         <div>
             <section className='productsAdmin-area'>
                 <div className='productsAdmin-wrapper-one'>
                     <div className="admin-container">
-                        <h2>Panel de Administración</h2>
+                        <h2>Bienvenido a tu panel de administrador</h2>
+                        {/* <h2>Hola, {usuario.nombre}{usuario.apellido}</h2> */}
                     </div>
                     {/* CRUD PRODUCTOS */}
                     <div className='crud-productos-admin'>
@@ -102,7 +104,7 @@ const AdminDashboard = () => {
                                         <button onClick={() => eliminarProducto(producto.id)} className='remove-btn'>Eliminar</button>
                                     </div>
                                 </div>
-                            ))};
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -125,7 +127,7 @@ const AdminDashboard = () => {
                                     <button onClick={() => eliminarUsuario(usuario.id)} className='remove-btn'>Eliminar</button>
 
                                 </div>
-                            ))};
+                            ))}
                         </div>
                     </div>
                 </div>
