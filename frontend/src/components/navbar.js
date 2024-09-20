@@ -20,10 +20,10 @@ export default function Navbar() {
                     <div className="page-name">
                         <h1>Ferrementum</h1>
                 </div>
-                <div className="search-bar">
+                {/* <div className="search-bar">
                     <input type="text" placeholder="Buscar productos, marcas y más..." />
                     <button tupe="submit" className="btn-search">Buscar</button>
-                </div>
+                </div> */}
                 <div className="buttons">
                     {isLoggedIn ? (
                         <NavLink className="link-acceso" to="/profile">

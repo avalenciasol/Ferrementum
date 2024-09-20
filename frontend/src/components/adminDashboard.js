@@ -16,9 +16,10 @@ const AdminDashboard = () => {
       ];
   
       const mockUsuarios = [
-        { id: 1, tipo_doc: 'CC', doc: '1001329907', nombre: 'Ana', apellido: 'Valencia', email: 'ana.valencia@gmail.com', tel: '3197280842' },
-        { id: 2, tipo_doc: 'TI', doc: '1012597861', nombre: 'Camilo', apellido: 'García', email: 'garca@hotmail.com', tel: '3147427313' },
-        { id: 3, tipo_doc: 'CC', doc: '20369156', nombre: 'Laura', apellido: 'López', email: 'LoLa01@gmail.com', tel: '3102267389' },
+        { id: 1, tipo_doc: 'CC', doc: '1001329907', nombre: 'Ana', apellido: 'Valencia', email: 'ana@gmail.com', tel: '3197280842' },
+        { id: 2, tipo_doc: 'CC', doc: '3214569870', nombre: 'Joseph', apellido: 'Rivera', email: 'jprivera@gmail.com', tel: '3226738910' },
+        { id: 3, tipo_doc: 'CC', doc: '20369156', nombre: 'Laura', apellido: 'López', email: 'lola1@gmail.com', tel: '3102267389' },
+        { id: 4, tipo_doc: 'TI', doc: '1234567890', nombre: 'Andrés', apellido: 'Barrera', email: 'andy@outlook.com', tel: '3108642962' },
       ];
   
       setProductos(mockProductos);
@@ -122,7 +123,7 @@ const AdminDashboard = () => {
                   <p>{producto.stock}</p>
                   <div className='product-actions'>
                     <button onClick={() => editarProducto(producto)} className='edit-btn'>Editar</button>
-                    <button onClick={() => eliminarProducto(producto.id)} className='remove-btn'>Eliminar</button>
+                    {/* <button onClick={() => eliminarProducto(producto.id)} className='remove-btn'>Eliminar</button> */}
                   </div>
                 </div>
               ))}

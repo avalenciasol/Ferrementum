@@ -145,6 +145,11 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+}
+
+.user-list {
+    width: 100%;
 }
 
 .product-item, .user-item {

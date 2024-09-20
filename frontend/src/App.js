@@ -19,7 +19,7 @@ const App = () => {
         <Navbar />
         <div style={{ margin: 0 }}>
           <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/" element={<Navigate to="/admin" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/access" element={<Access />} />
